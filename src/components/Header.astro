@@ -34,7 +34,7 @@ const navBaseClasses = "fixed top-0 w-full z-50 transition-all duration-300 bord
 
       <!-- Logo -->
       <a href="/" class="flex-shrink-0 flex items-center gap-3 relative z-10">
-        <img src="/images/ptc_llogo.png" alt="Pleroma Travel Consult" class="h-10 w-auto" :class="!scrolled && 'brightness-0 invert'" />
+        <img src="/images/ptc_logo.avif" alt="Pleroma Travel Consult" class="h-10 w-auto" :class="!scrolled && 'brightness-0 invert'" />
         <div class="flex flex-col leading-tight" :class="!scrolled ? 'text-white' : 'text-slate-900'">
           <span class="font-heading font-bold text-lg tracking-wider">PLEROMA</span>
           <span class="font-heading font-light text-xs tracking-[0.15em] uppercase opacity-70">Travel Consult</span>
@@ -43,17 +43,17 @@ const navBaseClasses = "fixed top-0 w-full z-50 transition-all duration-300 bord
 
       <!-- Desktop Menu -->
       <div class="hidden lg:flex items-center space-x-8 h-full">
-        <a href="/" class={`nav-link font-semibold ${activeNav === 'home' ? 'text-purple-600' : ''}`} :class="!scrolled && activeNav !== 'home' ? 'text-white' : 'text-slate-700 hover:text-purple-600'">Home</a>
+        <a href="/" class={`nav-link font-semibold ${activeNav === 'home' ? 'active' : ''}`} :class="!scrolled ? 'text-white hover:text-white' : 'text-slate-700 hover:text-purple-600'">Home</a>
 
         <!-- Services Full Width Mega Menu -->
         <div class="h-full flex items-center">
           <button 
             @mouseenter="megaMenuOpen = true"
             @mouseleave="megaMenuOpen = false"
-            class="nav-link flex items-center gap-1 focus:outline-none font-semibold transition-all"
+            class={`nav-link flex items-center gap-1 focus:outline-none font-semibold transition-all ${activeNav === 'services' ? 'active' : ''}`}
             :class="[
               !scrolled ? 'text-white hover:text-white' : 'text-slate-700 hover:text-purple-600',
-              megaMenuOpen ? 'active text-purple-600' : ''
+              megaMenuOpen ? 'active' : ''
             ]"
           >
             What We Offer <i class="ph-bold ph-caret-down text-sm transition-transform" :class="megaMenuOpen ? '-rotate-180' : ''"></i>
@@ -62,7 +62,7 @@ const navBaseClasses = "fixed top-0 w-full z-50 transition-all duration-300 bord
 
         <!-- About Dropdown -->
         <div class="group relative h-full flex items-center" x-data="{ aboutOpen: false }" @mouseenter="aboutOpen = true" @mouseleave="aboutOpen = false">
-          <button class="nav-link flex items-center gap-1 focus:outline-none font-semibold" :class="[
+          <button class={`nav-link flex items-center gap-1 focus:outline-none font-semibold ${activeNav === 'about' ? 'active' : ''}`} :class="[
             !scrolled ? 'text-white hover:text-white' : 'text-slate-700 hover:text-purple-600',
             aboutOpen ? 'active' : ''
           ]">
