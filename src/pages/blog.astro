@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+
+<BaseLayout title="Insights & News - Pleroma Travel Consult" activeNav="insights">
+  <!-- Header Banner -->
+  <section class="pt-32 pb-20 bg-slate-900 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 z-0"></div>
+    <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]"></div>
+    
+    <div class="container-custom relative z-10 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight font-heading">
+        Insights & <span class="text-amber-400">News</span>
+      </h1>
+      <p class="text-xl text-slate-300 max-w-2xl mx-auto">
+        Stay updated with the latest trends in global travel, education, and business.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="section-padding bg-slate-50 min-h-[50vh] flex items-center justify-center">
+    <div class="container-custom text-center" data-aos="fade-up">
+      <div class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-purple-100 text-purple-600 mb-8">
+        <i class="ph-bold ph-newspaper-clipping text-5xl"></i>
+      </div>
+      <h2 class="text-3xl font-bold text-slate-900 mb-4">Coming Soon</h2>
+      <p class="text-lg text-slate-600 max-w-lg mx-auto mb-8">
+        We are currently working on bringing you the best insights and news. Please check back later!
+      </p>
+      <a href="/" class="btn-glow px-8 py-3">Return Home</a>
+    </div>
+  </section>
+</BaseLayout>

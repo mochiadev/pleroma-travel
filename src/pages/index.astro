@@ -1,0 +1,805 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import Button from '../components/Button.astro';
+---
+
+<BaseLayout title="Pleroma Travel Consult" activeNav="home" heroMode={true}>
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- HERO — Full-Bleed Cinematic Carousel                      -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section
+    class="relative w-full h-[70vh] md:h-[80vh] lg:h-screen overflow-hidden"
+    x-data="{
+      active: 0,
+      total: 4,
+      init() { setInterval(() => this.next(), 7000) },
+      next() { this.active = (this.active + 1) % this.total },
+      prev() { this.active = (this.active - 1 + this.total) % this.total },
+      goto(i) { this.active = i }
+    }"
+  >
+    <!-- Background Slides -->
+    <div class="absolute inset-0">
+      {[
+        { src: '/images/index-hero.webp',  alt: 'Travel abroad' },
+        { src: '/images/index-hero1.jpg',  alt: 'Business setup' },
+        { src: '/images/index-hero2.jpeg', alt: 'New journey' },
+        { src: '/images/index-hero3.webp', alt: 'Global reach' },
+      ].map((img, i) => (
+        <div
+          class="absolute inset-0 w-full h-full"
+          x-show={`active === ${i}`}
+          x-transition:enter="transition-opacity duration-[1200ms] ease-out"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition-opacity duration-[800ms] ease-in"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+        >
+          <img
+            src={img.src}
+            alt={img.alt}
+            class="w-full h-full object-cover scale-105"
+            loading={i === 0 ? 'eager' : 'lazy'}
+          />
+        </div>
+      ))}
+      <!-- Gradient Overlays -->
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/50 to-slate-900/90 z-10"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-transparent to-transparent z-10"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-20 h-full flex items-center pt-16 lg:pt-20">
+      <div class="container-custom w-full">
+        <!-- Grid stack: both slides occupy the same cell so they overlap without absolute positioning -->
+        <div class="grid max-w-3xl" style="grid-template-areas:'stack'">
+
+          <!-- Slide 1 Text -->
+          <div
+            style="grid-area:stack"
+            x-show="active === 0 || active === 2"
+            x-transition:enter="transition duration-700 ease-out delay-200"
+            x-transition:enter-start="opacity-0 translate-y-6"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition duration-300 ease-in"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+          >
+            <p class="text-amber-400 text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.2em] sm:tracking-[0.25em] uppercase mb-3 md:mb-5">
+              <span class="inline-block w-6 sm:w-8 h-px bg-amber-400 mr-2 sm:mr-3 align-middle"></span>Travel &amp; Immigration
+            </p>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-white leading-[1.1] tracking-tight mb-3 sm:mb-4 md:mb-6">
+              Your Journey Abroad<br/>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-orange-400">Starts Here</span>
+            </h1>
+            <p class="text-slate-300 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl mb-5 sm:mb-6 md:mb-8 lg:mb-10">
+              Seamless visa processing, verified job placements, and end-to-end relocation support.
+            </p>
+            <div class="flex flex-wrap gap-3 sm:gap-4">
+              <Button href="/apply" variant="glow" class="px-5 sm:px-8 py-2.5 sm:py-3.5 text-xs sm:text-sm uppercase tracking-widest">Get Started</Button>
+              <Button href="/services" variant="glass" class="px-5 sm:px-8 py-2.5 sm:py-3.5 text-xs sm:text-sm uppercase tracking-widest">Our Services</Button>
+            </div>
+          </div>
+
+          <!-- Slide 2 Text -->
+          <div
+            style="grid-area:stack"
+            x-show="active === 1 || active === 3"
+            x-cloak
+            x-transition:enter="transition duration-700 ease-out delay-200"
+            x-transition:enter-start="opacity-0 translate-y-6"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition duration-300 ease-in"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+          >
+            <p class="text-cyan-400 text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.2em] sm:tracking-[0.25em] uppercase mb-3 md:mb-5">
+              <span class="inline-block w-6 sm:w-8 h-px bg-cyan-400 mr-2 sm:mr-3 align-middle"></span>Business &amp; Compliance
+            </p>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-white leading-[1.1] tracking-tight mb-3 sm:mb-4 md:mb-6">
+              Business Registration<br/>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Made Simple</span>
+            </h1>
+            <p class="text-slate-300 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl mb-5 sm:mb-6 md:mb-8 lg:mb-10">
+              Tailored company registration, compliance consulting, and corporate structuring across borders.
+            </p>
+            <div class="flex flex-wrap gap-3 sm:gap-4">
+              <Button href="/business-support" variant="glow" class="from-cyan-600 to-blue-600 px-5 sm:px-8 py-2.5 sm:py-3.5 text-xs sm:text-sm uppercase tracking-widest">Learn More</Button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar: Indicators + Arrows -->
+    <div class="absolute bottom-0 left-0 right-0 z-30 pointer-events-none">
+      <div class="container-custom flex items-center justify-between py-4 md:py-6 lg:py-8">
+
+        <!-- Progress Indicators -->
+        <div class="flex items-center gap-3 pointer-events-auto">
+          <template x-for="i in 4">
+            <button
+              @click="goto(i - 1)"
+              class="relative h-1 rounded-full overflow-hidden transition-all duration-500 focus:outline-none"
+              :class="active === i - 1 ? 'w-12 bg-white/30' : 'w-6 bg-white/15 hover:bg-white/25'"
+            >
+              <div
+                class="absolute inset-y-0 left-0 bg-white rounded-full"
+                :class="active === i - 1 ? 'animate-[progress_7s_linear]' : ''"
+                :style="active === i - 1 ? 'width: 100%' : 'width: 0'"
+              ></div>
+            </button>
+          </template>
+        </div>
+
+        <!-- Arrow Controls -->
+        <div class="flex items-center gap-3 pointer-events-auto">
+          <button @click="prev()" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 transition-all focus:outline-none">
+            <i class="ph-bold ph-caret-left text-sm"></i>
+          </button>
+          <button @click="next()" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 transition-all focus:outline-none">
+            <i class="ph-bold ph-caret-right text-sm"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Essential Services Section -->
+  <section class="section-padding bg-slate-50 relative">
+    <div class="container-custom relative z-10">
+      <SectionHeading 
+        title="Our Essential" 
+        highlight="Services" 
+        description="Streamlined solutions for your international needs, from visas to business registration."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div data-aos="fade-up" data-aos-delay="0">
+          <ServiceCard 
+            title="Study Visa"
+            description="Global university placements with visa success guarantee. Start your academic journey today."
+            image="/images/study-abroad.jpg"
+            href="/services/study-abroad"
+            icon="ph-bold ph-graduation-cap"
+            iconColor="purple"
+          />
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100">
+          <ServiceCard 
+            title="Work Permit"
+            description="Verified international job placements with legal authorization and sponsorship support."
+            image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+            href="/services/work-permit"
+            icon="ph-bold ph-briefcase"
+            iconColor="blue"
+          />
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200">
+          <ServiceCard 
+            title="Tourist Visa"
+            description="Hassle-free travel visas with 98% approval rate for holidays and family visits."
+            image="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?auto=format&fit=crop&w=600&q=80"
+            href="/services/tourist-visa"
+            icon="ph-bold ph-airplane-tilt"
+            iconColor="teal"
+          />
+        </div>
+        <div data-aos="fade-up" data-aos-delay="300">
+          <ServiceCard 
+            title="Passport Services"
+            description="Fast-track passport processing, renewals, and document assistance."
+            image="/images/passport.jpg"
+            href="/legal-documents#passport"
+            icon="ph-bold ph-identification-card"
+            iconColor="indigo"
+          />
+        </div>
+        <div data-aos="fade-up" data-aos-delay="400">
+          <ServiceCard 
+            title="Business Setup"
+            description="Complete international business registration and compliance services."
+            image="/images/bizreg.jpg"
+            href="/business-support#registration"
+            icon="ph-bold ph-buildings"
+            iconColor="amber"
+          />
+        </div>
+        <div data-aos="fade-up" data-aos-delay="500">
+          <ServiceCard 
+            title="Birth Certificate"
+            description="Application, replacement & legalization services for official documents."
+            image="/images/birth.jpg"
+            href="/legal-documents#birth-certificate"
+            icon="ph-bold ph-file-text"
+            iconColor="rose"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Pleroma (Editorial / Asymmetrical) -->
+  <section class="py-24 lg:py-32 relative bg-white overflow-hidden border-t border-slate-100">
+    <div class="container-custom relative z-10">
+      
+      <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 mb-20 items-end">
+        <div class="lg:w-1/2" data-aos="fade-right">
+          <span class="inline-block px-4 py-1 rounded-full bg-slate-100 text-slate-800 font-bold text-xs mb-6 tracking-[0.2em] uppercase border border-slate-200">The Pleroma Standard</span>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.1] tracking-tight font-heading">
+            Excellence <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 italic font-light">Without</span> Compromise
+          </h2>
+        </div>
+        <div class="lg:w-1/2 lg:pl-12 border-l border-slate-200" data-aos="fade-left">
+          <p class="text-xl text-slate-600 font-light leading-relaxed">
+            We don't just process applications; we architect futures. Our meticulous attention to detail ensures that your global transition is as seamless as it is successful.
+          </p>
+        </div>
+      </div>
+
+      <!-- Asymmetrical Bento / Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 auto-rows-[minmax(250px,auto)]">
+        
+        <!-- Large Featured Block -->
+        <div class="md:col-span-12 lg:col-span-7 bg-slate-900 text-white rounded-3xl p-10 lg:p-14 relative overflow-hidden group" data-aos="fade-up">
+          <div class="absolute inset-0 opacity-20 noise-bg mix-blend-overlay"></div>
+          <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+          <div class="relative z-10 h-full flex flex-col justify-between">
+            <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-12">
+              <i class="ph-light ph-shield-check text-3xl text-cyan-300"></i>
+            </div>
+            <div>
+              <h3 class="text-3xl lg:text-4xl font-bold mb-4 text-cyan-300">Verified Opportunities</h3>
+              <p class="text-slate-300 text-lg lg:text-xl font-light max-w-md">We rigorously vet every partner, institution, and employer to provide you with secure, authentic pathways abroad.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Small Block 1 -->
+        <div class="md:col-span-6 lg:col-span-5 bg-purple-50 rounded-3xl p-10 lg:p-12 border border-purple-100 group hover:bg-purple-100 transition-colors" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center mb-8 shadow-sm text-purple-600">
+            <i class="ph-light ph-globe-hemisphere-west text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">Global Network</h3>
+          <p class="text-slate-600">Direct partnerships with embassies, universities, and multinational corporations.</p>
+        </div>
+
+        <!-- Small Block 2 -->
+        <div class="md:col-span-6 lg:col-span-4 bg-amber-50 rounded-3xl p-10 lg:p-12 border border-amber-100 group hover:bg-amber-100 transition-colors" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center mb-8 shadow-sm text-amber-600">
+            <i class="ph-light ph-files text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">Visa Expertise</h3>
+          <p class="text-slate-600">Meticulous document preparation resulting in an industry-leading approval rate.</p>
+        </div>
+
+        <!-- Medium Block -->
+        <div class="md:col-span-12 lg:col-span-8 bg-white rounded-3xl p-10 lg:p-12 border border-slate-200 shadow-xl shadow-black/5 flex flex-col md:flex-row gap-8 items-center group relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+          <div class="absolute -right-20 -bottom-20 text-[15rem] text-slate-50 opacity-50 font-bold font-heading pointer-events-none select-none">24/7</div>
+          <div class="relative z-10 flex-1">
+            <div class="w-14 h-14 rounded-full bg-slate-900 flex items-center justify-center mb-8 text-white">
+              <i class="ph-light ph-headset text-2xl"></i>
+            </div>
+            <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">Concierge-Level Support</h3>
+            <p class="text-slate-600 text-lg">From the initial consultation to your arrival at your destination, our dedicated team provides uninterrupted, personalized assistance at every milestone.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview Section (Editorial) -->
+  <section class="py-24 lg:py-32 bg-slate-50 relative overflow-hidden" id="about">
+    <div class="absolute -right-40 top-20 text-[20rem] font-bold text-slate-100 font-heading select-none pointer-events-none z-0">PTC</div>
+    
+    <div class="container-custom relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+        
+        <!-- Image Column with Offset -->
+        <div class="lg:col-span-5 relative pr-6 pb-6 lg:pr-0 lg:pb-0" data-aos="fade-right">
+          <div class="relative z-10 w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
+            <img src="/images/travel_illus0.jpg" alt="Pleroma Team" class="w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-[1.5s] ease-out">
+            <div class="absolute inset-0 bg-slate-900/10 mix-blend-multiply"></div>
+          </div>
+          <!-- Decorative Frame -->
+          <div class="absolute -top-6 -left-6 w-full h-full border border-slate-300 rounded-[2rem] z-0 pointer-events-none"></div>
+          <!-- Stats Badge -->
+          <div class="absolute bottom-0 right-0 lg:-bottom-10 lg:-right-10 bg-white p-6 lg:p-8 rounded-3xl shadow-xl z-20 w-40 lg:w-48 border border-slate-100" data-aos="fade-up" data-aos-delay="200">
+            <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1 font-heading">98<span class="text-amber-500">%</span></div>
+            <p class="text-xs lg:text-sm text-slate-500 font-medium uppercase tracking-widest">Success Rate</p>
+          </div>
+        </div>
+
+        <!-- Content Column -->
+        <div class="lg:col-span-7 lg:pl-10" data-aos="fade-left">
+          <div class="flex items-center gap-4 mb-8">
+            <span class="w-12 h-[2px] bg-slate-300"></span>
+            <span class="text-slate-500 tracking-[0.2em] text-xs font-bold uppercase">Our Philosophy</span>
+          </div>
+          
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-slate-900 leading-[1.1] tracking-tight font-heading">
+            Redefining <span class="italic font-light text-slate-500">Global</span><br/> Mobility
+          </h2>
+          
+          <p class="text-xl text-slate-600 mb-12 leading-relaxed font-light">
+            We don't believe in one-size-fits-all solutions. Our approach marries deep regulatory knowledge with a personalized understanding of your ambitions, creating a seamless bridge to your international future.
+          </p>
+
+          <div class="space-y-8 mb-12 border-l border-slate-200 pl-8">
+            <div class="relative">
+              <div class="absolute -left-[2.1rem] top-1 w-2 h-2 rounded-full bg-slate-900"></div>
+              <h4 class="text-xl font-bold text-slate-900 mb-2">Transparency</h4>
+              <p class="text-slate-500 leading-relaxed font-light">We promise clarity and honesty in an industry that can often be confusing. No hidden fees or misleading timelines.</p>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-[2.1rem] top-1 w-2 h-2 rounded-full bg-slate-400"></div>
+              <h4 class="text-xl font-bold text-slate-900 mb-2">High Approval Rates</h4>
+              <p class="text-slate-500 leading-relaxed font-light">Meticulous document preparation resulting in an industry-leading approval rate for visas and business registrations.</p>
+            </div>
+          </div>
+          
+          <Button href="/about" class="px-10 py-4 uppercase tracking-[0.15em] text-sm bg-slate-900 text-white hover:bg-slate-800 rounded-none hover:translate-x-2 transition-transform">
+            Discover Our Story
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Destinations (Editorial Style) -->
+  <section class="py-24 lg:py-32 bg-white" id="country">
+    <div class="container-custom">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16" data-aos="fade-up">
+        <div>
+          <span class="inline-block px-4 py-1 rounded-full bg-slate-100 text-slate-800 font-bold text-xs mb-6 tracking-[0.2em] uppercase border border-slate-200">Global Reach</span>
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.1] tracking-tight font-heading">
+            Destinations of <br/> <span class="italic font-light text-slate-500">Choice</span>
+          </h2>
+        </div>
+        <div class="max-w-md">
+          <p class="text-lg text-slate-600 font-light">Explore top-tier jurisdictions recognized globally for their robust economies, world-class education, and unparalleled quality of life.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 auto-rows-[400px] lg:auto-rows-[450px]">
+        <!-- Canada -->
+        <div class="lg:col-span-4 group relative overflow-hidden bg-slate-100 cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-[1s]" data-aos="fade-up" data-aos-delay="0">
+          <img src="https://images.unsplash.com/photo-1517935706615-2717063c2225?auto=format&fit=crop&w=800&q=80" alt="Canada" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 filter brightness-90 group-hover:brightness-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-700"></div>
+          <div class="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="text-white/70 tracking-[0.3em] text-xs font-bold uppercase">01</span>
+              <div class="h-[1px] w-12 bg-white/30 group-hover:w-24 group-hover:bg-white transition-all duration-700"></div>
+            </div>
+            <h3 class="text-4xl font-bold text-white mb-2 font-heading tracking-tight">Canada</h3>
+            <p class="text-slate-300 font-light opacity-0 h-0 group-hover:h-auto group-hover:opacity-100 group-hover:mt-4 transition-all duration-700">Top choice for permanent residency and high quality of life.</p>
+          </div>
+        </div>
+
+        <!-- USA -->
+        <div class="lg:col-span-4 group relative overflow-hidden bg-slate-100 cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-[1s]" data-aos="fade-up" data-aos-delay="100">
+          <img src="/images/us.avif" alt="USA" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 filter brightness-90 group-hover:brightness-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-700"></div>
+          <div class="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="text-white/70 tracking-[0.3em] text-xs font-bold uppercase">02</span>
+              <div class="h-[1px] w-12 bg-white/30 group-hover:w-24 group-hover:bg-white transition-all duration-700"></div>
+            </div>
+            <h3 class="text-4xl font-bold text-white mb-2 font-heading tracking-tight">United States</h3>
+            <p class="text-slate-300 font-light opacity-0 h-0 group-hover:h-auto group-hover:opacity-100 group-hover:mt-4 transition-all duration-700">The premier destination for technological and business innovation.</p>
+          </div>
+        </div>
+
+        <!-- UK -->
+        <div class="lg:col-span-4 group relative overflow-hidden bg-slate-100 cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-[1s]" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80" alt="United Kingdom" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 filter brightness-90 group-hover:brightness-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-700"></div>
+          <div class="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="text-white/70 tracking-[0.3em] text-xs font-bold uppercase">03</span>
+              <div class="h-[1px] w-12 bg-white/30 group-hover:w-24 group-hover:bg-white transition-all duration-700"></div>
+            </div>
+            <h3 class="text-4xl font-bold text-white mb-2 font-heading tracking-tight">United Kingdom</h3>
+            <p class="text-slate-300 font-light opacity-0 h-0 group-hover:h-auto group-hover:opacity-100 group-hover:mt-4 transition-all duration-700">Prestigious universities intertwined with a rich cultural heritage.</p>
+          </div>
+        </div>
+
+        <!-- Australia -->
+        <div class="lg:col-span-7 group relative overflow-hidden bg-slate-100 cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-[1s]" data-aos="fade-up" data-aos-delay="300">
+          <img src="/images/australia.avif" alt="Australia" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 filter brightness-90 group-hover:brightness-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-700"></div>
+          <div class="absolute inset-x-0 bottom-0 p-8 lg:p-12 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="text-white/70 tracking-[0.3em] text-xs font-bold uppercase">04</span>
+              <div class="h-[1px] w-12 bg-white/30 group-hover:w-24 group-hover:bg-white transition-all duration-700"></div>
+            </div>
+            <h3 class="text-5xl lg:text-6xl font-bold text-white mb-2 font-heading tracking-tight">Australia</h3>
+            <p class="text-slate-300 font-light text-lg max-w-xl opacity-0 h-0 group-hover:h-auto group-hover:opacity-100 group-hover:mt-4 transition-all duration-700">A stunning blend of world-class education and an unparalleled, relaxed lifestyle.</p>
+          </div>
+        </div>
+
+        <!-- New Zealand -->
+        <div class="lg:col-span-5 group relative overflow-hidden bg-slate-100 cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-[1s]" data-aos="fade-up" data-aos-delay="400">
+          <img src="/images/new-zealand.jpg" alt="New Zealand" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 filter brightness-90 group-hover:brightness-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-700"></div>
+          <div class="absolute inset-x-0 bottom-0 p-8 lg:p-12 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="text-white/70 tracking-[0.3em] text-xs font-bold uppercase">05</span>
+              <div class="h-[1px] w-12 bg-white/30 group-hover:w-24 group-hover:bg-white transition-all duration-700"></div>
+            </div>
+            <h3 class="text-4xl lg:text-5xl font-bold text-white mb-2 font-heading tracking-tight">New Zealand</h3>
+            <p class="text-slate-300 font-light opacity-0 h-0 group-hover:h-auto group-hover:opacity-100 group-hover:mt-4 transition-all duration-700">Safe, welcoming, and featuring breathtakingly beautiful landscapes.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Programs (Magazine Layout) -->
+  <section class="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">
+    <div class="absolute -left-[20%] top-40 w-[60%] h-[60%] bg-purple-200/40 rounded-full blur-[100px] pointer-events-none z-0"></div>
+    <div class="container-custom relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+        <span class="inline-block px-4 py-1 rounded-full bg-white text-slate-800 font-bold text-xs mb-6 tracking-[0.2em] uppercase border border-slate-200 shadow-sm">Global Opportunities</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.1] tracking-tight font-heading mb-6">
+          Featured <span class="italic font-light text-slate-500">Pathways</span>
+        </h2>
+        <p class="text-lg text-slate-600 font-light">Hand-picked programs offering the most robust prospects for career acceleration and cultural immersion.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        {[
+          { title: 'Hospitality', tag: 'High Demand', tagColor: 'amber', loc: 'Dubai, Canada, UK', img: '/images/reception.avif', desc: 'Launch your career in 5-star luxury hotels. Positions available for front desk, housekeeping, and F&B service.' },
+          { title: 'Teach Abroad', tag: 'Educational', tagColor: 'emerald', loc: 'Thailand, Vietnam, China', img: '/images/teach.jpg', desc: 'Inspire the next generation while exploring Asia. Competitive salaries and accommodation often included.' },
+          { title: 'Healthcare', tag: 'Medical', tagColor: 'blue', loc: 'UK, USA, Germany', img: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', desc: 'Registered nurses and care assistants needed for top-tier hospitals and care homes abroad.' }
+        ].map((prog, i) => (
+          <div class="group relative flex flex-col" data-aos="fade-up" data-aos-delay={i * 150}>
+            <div class="w-full aspect-[4/3] rounded-3xl overflow-hidden mb-8 relative shadow-lg">
+              <img src={prog.img} alt={prog.title} class="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-105">
+              <div class="absolute inset-0 bg-slate-900/10 mix-blend-multiply transition-colors duration-500 group-hover:bg-transparent"></div>
+              <div class={`absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-${prog.tagColor}-600 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest`}>{prog.tag}</div>
+            </div>
+            
+            <div class="flex flex-col flex-1 px-2">
+              <div class="flex items-center gap-2 mb-3">
+                <i class="ph-bold ph-map-pin text-slate-400"></i>
+                <span class="text-slate-500 text-sm font-semibold tracking-wide uppercase">{prog.loc}</span>
+              </div>
+              <h3 class="text-3xl font-bold text-slate-900 mb-4 font-heading">{prog.title}</h3>
+              <p class="text-slate-600 font-light leading-relaxed">{prog.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Single CTA Block -->
+      <div class="mt-16 relative" data-aos="fade-up" data-aos-delay="300">
+        <div class="relative bg-slate-900 rounded-2xl px-8 py-10 sm:px-12 sm:py-12 flex flex-col sm:flex-row items-center justify-between gap-6 overflow-hidden">
+          <!-- Decorative elements -->
+          <div class="absolute inset-0 noise-bg opacity-10 mix-blend-overlay"></div>
+          <div class="absolute -right-20 -top-20 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl"></div>
+          <div class="absolute -left-10 -bottom-10 w-48 h-48 bg-amber-500/15 rounded-full blur-3xl"></div>
+          
+          <div class="relative z-10 flex items-center gap-5">
+            <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center shrink-0">
+              <i class="ph-bold ph-lightning text-amber-400 text-xl"></i>
+            </div>
+            <div>
+              <p class="text-white font-bold text-lg sm:text-xl">Slots are limited — secure yours today</p>
+              <p class="text-slate-400 text-sm mt-1">Contact us now to discover available opportunities across all pathways.</p>
+            </div>
+          </div>
+          <Button href="/contact" variant="glass" class="relative z-10 px-8 py-3 text-xs uppercase tracking-widest border-white/30 hover:bg-white/20 shrink-0 whitespace-nowrap">
+            Contact Us Now
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- TESTIMONIALS — Swiper.js Carousel                        -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section class="py-20 lg:py-28 bg-white relative overflow-hidden" id="testimonials">
+    <!-- Decorative background -->
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+    <div class="absolute -left-40 top-20 w-96 h-96 bg-purple-100/50 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute -right-40 bottom-20 w-96 h-96 bg-amber-100/50 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="container-custom relative z-10">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12" data-aos="fade-up">
+        <div>
+          <span class="inline-flex items-center gap-2 text-purple-600 text-xs font-bold tracking-[0.2em] uppercase mb-4">
+            <i class="ph-fill ph-quotes text-lg"></i> Client Stories
+          </span>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-slate-900 leading-tight tracking-tight">
+            Trusted by Hundreds<br/>Across the Globe
+          </h2>
+        </div>
+        <div class="flex items-center gap-6">
+          <p class="text-slate-500 text-base max-w-sm leading-relaxed hidden md:block">
+            Hear from those who achieved their international ambitions with PTC.
+          </p>
+          <!-- Swiper Nav Arrows -->
+          <div class="flex items-center gap-2 shrink-0">
+            <button id="testimonial-prev" class="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-purple-600 hover:border-purple-300 transition-all focus:outline-none">
+              <i class="ph-bold ph-caret-left text-sm"></i>
+            </button>
+            <button id="testimonial-next" class="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-purple-600 hover:border-purple-300 transition-all focus:outline-none">
+              <i class="ph-bold ph-caret-right text-sm"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Swiper Container -->
+      <div class="swiper testimonial-swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper pb-4">
+
+          <!-- Slide 1 -->
+          <div class="swiper-slide h-auto">
+            <div class="bg-slate-50 rounded-2xl p-7 sm:p-8 border border-slate-100 flex flex-col h-full group hover:border-purple-200 hover:shadow-lg hover:shadow-purple-500/5 transition-all duration-300">
+              <div class="flex text-amber-400 text-sm mb-5 gap-0.5">
+                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+              </div>
+              <p class="text-slate-700 leading-relaxed mb-8 flex-1 relative">
+                <span class="text-purple-200 text-5xl font-serif absolute -top-3 -left-1 select-none leading-none">&ldquo;</span>
+                <span class="relative z-10">PTC made my dream of working in Canada a reality. The entire process was smooth and transparent, with constant updates at every stage.</span>
+              </p>
+              <div class="flex items-center gap-4 mt-auto pt-6 border-t border-slate-200">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="John D." class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" loading="lazy">
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm">John D.</h4>
+                  <span class="text-slate-500 text-xs">Construction Supervisor, Canada</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide h-auto">
+            <div class="bg-slate-50 rounded-2xl p-7 sm:p-8 border border-slate-100 flex flex-col h-full group hover:border-purple-200 hover:shadow-lg hover:shadow-purple-500/5 transition-all duration-300">
+              <div class="flex text-amber-400 text-sm mb-5 gap-0.5">
+                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+              </div>
+              <p class="text-slate-700 leading-relaxed mb-8 flex-1 relative">
+                <span class="text-purple-200 text-5xl font-serif absolute -top-3 -left-1 select-none leading-none">&ldquo;</span>
+                <span class="relative z-10">From application to arrival in Germany took just 8 weeks! The team handled everything from visa processing to finding me accommodation.</span>
+              </p>
+              <div class="flex items-center gap-4 mt-auto pt-6 border-t border-slate-200">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Sarah M." class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" loading="lazy">
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm">Sarah M.</h4>
+                  <span class="text-slate-500 text-xs">Senior Caregiver, Germany</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide h-auto">
+            <div class="bg-slate-50 rounded-2xl p-7 sm:p-8 border border-slate-100 flex flex-col h-full group hover:border-purple-200 hover:shadow-lg hover:shadow-purple-500/5 transition-all duration-300">
+              <div class="flex text-amber-400 text-sm mb-5 gap-0.5">
+                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+              </div>
+              <p class="text-slate-700 leading-relaxed mb-8 flex-1 relative">
+                <span class="text-purple-200 text-5xl font-serif absolute -top-3 -left-1 select-none leading-none">&ldquo;</span>
+                <span class="relative z-10">The hospitality job in Australia was exactly as described. PTC's verification process gave me confidence in the opportunity.</span>
+              </p>
+              <div class="flex items-center gap-4 mt-auto pt-6 border-t border-slate-200">
+                <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Michael T." class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" loading="lazy">
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm">Michael T.</h4>
+                  <span class="text-slate-500 text-xs">Hotel Manager, Australia</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="swiper-slide h-auto">
+            <div class="bg-slate-50 rounded-2xl p-7 sm:p-8 border border-slate-100 flex flex-col h-full group hover:border-purple-200 hover:shadow-lg hover:shadow-purple-500/5 transition-all duration-300">
+              <div class="flex text-amber-400 text-sm mb-5 gap-0.5">
+                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+              </div>
+              <p class="text-slate-700 leading-relaxed mb-8 flex-1 relative">
+                <span class="text-purple-200 text-5xl font-serif absolute -top-3 -left-1 select-none leading-none">&ldquo;</span>
+                <span class="relative z-10">PTC helped me register my export business in record time. Their knowledge of international requirements saved me months of work.</span>
+              </p>
+              <div class="flex items-center gap-4 mt-auto pt-6 border-t border-slate-200">
+                <img src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Ama K." class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" loading="lazy">
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm">Ama K.</h4>
+                  <span class="text-slate-500 text-xs">Business Owner, UK</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="swiper-slide h-auto">
+            <div class="bg-slate-50 rounded-2xl p-7 sm:p-8 border border-slate-100 flex flex-col h-full group hover:border-purple-200 hover:shadow-lg hover:shadow-purple-500/5 transition-all duration-300">
+              <div class="flex text-amber-400 text-sm mb-5 gap-0.5">
+                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+              </div>
+              <p class="text-slate-700 leading-relaxed mb-8 flex-1 relative">
+                <span class="text-purple-200 text-5xl font-serif absolute -top-3 -left-1 select-none leading-none">&ldquo;</span>
+                <span class="relative z-10">My student visa was approved in just 3 weeks thanks to PTC's meticulous document preparation and interview coaching.</span>
+              </p>
+              <div class="flex items-center gap-4 mt-auto pt-6 border-t border-slate-200">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Kwame B." class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" loading="lazy">
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm">Kwame B.</h4>
+                  <span class="text-slate-500 text-xs">Student, USA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Pagination Bullets -->
+        <div class="swiper-pagination mt-8 !relative"></div>
+      </div>
+
+      <!-- Stats Banner Below Swiper -->
+      <div class="mt-12 bg-gradient-to-r from-purple-600 to-indigo-700 rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 text-white relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+        <div class="absolute inset-0 noise-bg opacity-10 mix-blend-overlay"></div>
+        <div class="relative z-10 flex items-center gap-6">
+          <div class="text-5xl sm:text-6xl font-heading font-bold">500<span class="text-amber-300">+</span></div>
+          <div>
+            <p class="text-white/90 font-semibold text-lg">Clients Relocated</p>
+            <p class="text-purple-200 text-sm">Join a growing community of global professionals.</p>
+          </div>
+        </div>
+        <Button href="/contact" variant="glass" class="relative z-10 px-8 py-3 text-xs uppercase tracking-widest border-white/30 hover:bg-white/20 shrink-0">Start Your Journey</Button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Swiper Init Script -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Swiper('.testimonial-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        autoHeight: true,
+        loop: true,
+        speed: 600,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        pagination: {
+          el: '.testimonial-swiper .swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          prevEl: '#testimonial-prev',
+          nextEl: '#testimonial-next',
+        },
+        breakpoints: {
+          640: { slidesPerView: 1, spaceBetween: 20 },
+          768: { slidesPerView: 2, spaceBetween: 24 },
+          1024: { slidesPerView: 3, spaceBetween: 28 },
+        },
+      });
+    });
+  </script>
+
+  <!-- Contact Section (Editorial Asymmetry) -->
+  <section class="py-20 lg:py-24 bg-slate-50 relative" id="contact">
+    <div class="container-custom relative z-10">
+      
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-stretch">
+        <div class="lg:w-5/12 flex flex-col" data-aos="fade-right">
+          <span class="inline-block px-4 py-1 rounded-full bg-white text-slate-800 font-bold text-xs mb-6 tracking-[0.2em] uppercase border border-slate-200 shadow-sm">Get In Touch</span>
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.1] tracking-tight font-heading mb-4">
+            Begin Your <br/> <span class="italic font-light text-slate-500">Journey</span>
+          </h2>
+          <p class="text-base text-slate-600 font-light mb-8 leading-relaxed">
+            Our consultants are available to curate your specific strategy. Schedule an appointment for the highest tier of service.
+          </p>
+          
+          <div class="space-y-6 flex-1">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-900 shrink-0">
+                <i class="ph-light ph-map-pin text-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-bold tracking-wide uppercase text-xs mb-1 text-slate-500">Headquarters</h4>
+                <p class="text-slate-800 font-medium text-sm">Sowutoum, Accra, Ghana</p>
+                <p class="text-slate-500 text-xs mt-0.5">Near Pentecost University</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-900 shrink-0">
+                <i class="ph-light ph-phone text-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-bold tracking-wide uppercase text-xs mb-1 text-slate-500">Direct Line</h4>
+                <p class="text-slate-800 font-medium text-sm"><a href="tel:+233558009078" class="hover:text-purple-600 transition-colors">+233 55 800 9078</a></p>
+                <p class="text-slate-500 text-xs mt-0.5">Mon-Fri: 8:00AM - 5:00PM</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-900 shrink-0">
+                <i class="ph-light ph-envelope-simple text-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-bold tracking-wide uppercase text-xs mb-1 text-slate-500">Digital Correspondence</h4>
+                <p class="text-slate-800 font-medium text-sm"><a href="mailto:pleromatravelconsult@gmail.com" class="hover:text-purple-600 transition-colors">pleromatravelconsult@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8">
+            <Button href="/booking" class="px-8 py-3.5 bg-slate-900 text-white hover:bg-slate-800 rounded-none w-full sm:w-auto uppercase tracking-[0.15em] text-sm hover:translate-x-2 transition-transform shadow-xl">
+              Schedule Consultation
+            </Button>
+          </div>
+        </div>
+        
+        <div class="lg:w-7/12 flex" data-aos="fade-left">
+          <div class="w-full bg-slate-200 overflow-hidden relative flex-1">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.594601081457!2d-0.27192469999999996!3d5.6267071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf99000437a135%3A0xcd944d1fdf3f5411!2sPleroma%20Travel%20Consult!5e0!3m2!1sen!2sgh!4v1755532451848!5m2!1sen!2sgh"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" class="w-full h-full filter grayscale-[30%] contrast-[1.1]"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section (Concise) -->
+  <section class="py-20 lg:py-24 relative overflow-hidden flex items-center justify-center bg-slate-900 text-white">
+    <!-- Atmospheric Background -->
+    <div class="absolute inset-0 z-0">
+      <img src="/images/mates-uni.jpg" alt="University Students" class="w-full h-full object-cover scale-105 opacity-40 mix-blend-luminosity">
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+    </div>
+
+    <!-- Radial Glow -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+      <div class="w-[60vw] h-[60vw] max-w-[600px] max-h-[600px] bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-[80px]"></div>
+    </div>
+
+    <div class="relative z-10 container-custom px-4 text-center max-w-3xl mx-auto">
+      <div data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5 leading-[1.1] tracking-tight font-heading">
+          Move Forward
+          <span class="italic font-light text-slate-300"> Without Limits</span>
+        </h2>
+        <p class="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed max-w-xl mx-auto font-light">
+          Visas, documents, business setup — everything you need to cross borders and build futures.
+        </p>
+
+        <div class="flex flex-col items-center">
+          <Button href="/contact" class="px-10 py-4 text-sm uppercase tracking-[0.2em] font-bold bg-white text-slate-900 hover:bg-slate-100 rounded-none w-auto hover:scale-105 transition-transform shadow-2xl shadow-white/10">
+            Get Started
+          </Button>
+          
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-5 text-slate-400 text-xs tracking-widest uppercase font-bold">
+            <span class="flex items-center gap-2"><i class="ph-bold ph-shield-check text-white text-base"></i> Full Transparency</span>
+            <span class="hidden sm:inline text-slate-600">&bull;</span>
+            <span class="flex items-center gap-2"><i class="ph-bold ph-star text-white text-base"></i> 98% Success</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

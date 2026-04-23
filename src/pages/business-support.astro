@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Business Support - Pleroma Travel Consult" activeNav="services">
+  <!-- Premium Hero Section -->
+  <header class="relative pt-32 pb-24 lg:pt-40 lg:pb-32 bg-slate-900 overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0 bg-slate-900">
+      <img src="/images/bizreg.jpg" alt="Business Support" class="w-full h-full object-cover opacity-50 object-center">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-slate-900/30"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-right">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-[2px] bg-amber-500"></div>
+          <span class="text-amber-500 font-bold text-xs tracking-widest uppercase">Corporate Services</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 tracking-tight leading-tight">
+          Business Support
+        </h1>
+        <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
+          From local incorporation to international strategic expansion, we provide the expert framework your enterprise needs to thrive.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Services Section -->
+  <section id="services" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+      
+      <!-- Business Registration (Text Left, Image Right) -->
+      <div class="flex flex-col-reverse lg:flex-row gap-12 lg:gap-16 items-center" id="registration">
+        <!-- Content -->
+        <div class="lg:w-1/2" data-aos="fade-right">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="w-12 h-[2px] bg-purple-300"></span>
+            <span class="text-purple-600 tracking-[0.2em] text-xs font-bold uppercase">Corporate Setup</span>
+          </div>
+          
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-slate-900 leading-[1.1] tracking-tight font-heading">
+            Business <span class="italic font-light text-slate-500">Registration</span>
+          </h2>
+          
+          <p class="text-lg text-slate-600 mb-8 leading-relaxed font-light">
+            We handle the legal setup so you can focus on running your business. From incorporation to acquiring licenses, we manage the entire procedural lifecycle.
+          </p>
+
+          <div class="space-y-6 border-l border-slate-200 pl-6">
+            <div class="relative">
+              <div class="absolute -left-[1.6rem] top-1.5 w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+              <h4 class="text-lg font-bold text-slate-900 mb-1">Entity Formation</h4>
+              <p class="text-slate-500 text-sm leading-relaxed font-light">Sole Proprietorship, Partnership, & LLC Setup.</p>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-[1.6rem] top-1.5 w-1.5 h-1.5 rounded-full bg-purple-400"></div>
+              <h4 class="text-lg font-bold text-slate-900 mb-1">Tax Registration</h4>
+              <p class="text-slate-500 text-sm leading-relaxed font-light">Tax Identification Number (TIN) & regulatory profiling.</p>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-[1.6rem] top-1.5 w-1.5 h-1.5 rounded-full bg-slate-800"></div>
+              <h4 class="text-lg font-bold text-slate-900 mb-1">Official Filings</h4>
+              <p class="text-slate-500 text-sm leading-relaxed font-light">Complete Registrar General's Department submissions.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="lg:w-1/2 w-full" data-aos="fade-left">
+          <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-100 relative group">
+            <div class="absolute inset-0 bg-purple-900/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+            <img src="/images/bizreg.jpg" alt="Corporate Office" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Consultation (Image Left, Text Right) -->
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center" id="consultation">
+        <!-- Image -->
+        <div class="lg:w-1/2 w-full order-2 lg:order-1" data-aos="fade-right">
+          <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-100 relative group">
+            <div class="absolute inset-0 bg-amber-900/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+            <img src="/images/bconsult.jpg" alt="Business Consulting" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="lg:w-1/2 order-1 lg:order-2" data-aos="fade-left">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="w-12 h-[2px] bg-amber-300"></span>
+            <span class="text-amber-600 tracking-[0.2em] text-xs font-bold uppercase">Strategic Advisory</span>
+          </div>
+          
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-slate-900 leading-[1.1] tracking-tight font-heading">
+            Business <span class="italic font-light text-slate-500">Consultation</span>
+          </h2>
+          
+          <p class="text-lg text-slate-600 mb-8 leading-relaxed font-light">
+            Strategic advisory services designed to help you navigate local markets, expand operations efficiently, or solve complex organizational challenges.
+          </p>
+
+          <div class="space-y-6 border-l border-slate-200 pl-6">
+            <div class="relative">
+              <div class="absolute -left-[1.6rem] top-1.5 w-1.5 h-1.5 rounded-full bg-amber-500"></div>
+              <h4 class="text-lg font-bold text-slate-900 mb-1">Market Entry</h4>
+              <p class="text-slate-500 text-sm leading-relaxed font-light">Comprehensive entry strategy and localized research.</p>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-[1.6rem] top-1.5 w-1.5 h-1.5 rounded-full bg-amber-400"></div>
+              <h4 class="text-lg font-bold text-slate-900 mb-1">Regulatory Compliance</h4>
+              <p class="text-slate-500 text-sm leading-relaxed font-light">Navigating local laws and industry-specific regulations.</p>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-[1.6rem] top-1.5 w-1.5 h-1.5 rounded-full bg-slate-800"></div>
+              <h4 class="text-lg font-bold text-slate-900 mb-1">Growth Planning</h4>
+              <p class="text-slate-500 text-sm leading-relaxed font-light">Actionable blueprints for scaling your enterprise.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Requirements Section (Tabbed Ledger) -->
+  <section class="py-16 lg:py-20 bg-white border-t border-slate-100 relative" x-data="{ activeTab: 'owner' }">
+    <div class="container-custom">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
+        
+        <!-- Left Context & Tabs -->
+        <div class="lg:w-1/3" data-aos="fade-right">
+          <div class="sticky top-32">
+            <span class="inline-flex items-center gap-2 text-purple-600 text-xs font-bold tracking-[0.2em] uppercase mb-4">
+              <i class="ph-bold ph-folder-notch-open"></i> What You Need
+            </span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 leading-[1.1] tracking-tight font-heading mb-4">
+              Preparation <span class="italic font-light text-slate-500">Checklist</span>
+            </h2>
+            <p class="text-base text-slate-600 font-light mb-8">
+              Ensure you have the following prerequisites ready to expedite your business registration timeline.
+            </p>
+
+            <!-- Tab Buttons -->
+            <div class="flex flex-col gap-3">
+              <button @click="activeTab = 'owner'" 
+                      :class="activeTab === 'owner' ? 'bg-purple-600 text-white shadow-md border-purple-600' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'"
+                      class="flex items-center justify-between px-6 py-4 rounded-xl font-bold transition-all border text-left">
+                <span class="flex items-center gap-3">
+                  <i class="ph-bold ph-user text-xl"></i> Owner Details
+                </span>
+                <i class="ph-bold ph-arrow-right opacity-50" x-show="activeTab === 'owner'"></i>
+              </button>
+
+              <button @click="activeTab = 'business'" 
+                      :class="activeTab === 'business' ? 'bg-amber-500 text-white shadow-md border-amber-500' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'"
+                      class="flex items-center justify-between px-6 py-4 rounded-xl font-bold transition-all border text-left">
+                <span class="flex items-center gap-3">
+                  <i class="ph-bold ph-buildings text-xl"></i> Business Details
+                </span>
+                <i class="ph-bold ph-arrow-right opacity-50" x-show="activeTab === 'business'" x-cloak></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ledger Lists (Right Pane) -->
+        <div class="lg:w-2/3" data-aos="fade-left">
+          
+          <!-- Owner Ledger -->
+          <div x-show="activeTab === 'owner'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
+            <div class="border-t-2 border-slate-900">
+              {[
+                { title: 'Valid Ghanaian ID', desc: 'Ghana Card preferred, or bio-data page of passport.' },
+                { title: 'Passport Photos', desc: 'Recent biometric photographs of directors/owners.' },
+                { title: 'Tax Identification Number', desc: 'Required (often linked to the Ghana Card).' }
+              ].map((req, i) => (
+                <div class="group py-4 sm:py-5 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 hover:bg-purple-50/50 transition-colors px-4 sm:px-6 -mx-4 sm:-mx-6">
+                  <div class="hidden sm:block text-slate-300 font-mono text-sm tracking-widest group-hover:text-purple-500 transition-colors">0{i + 1}</div>
+                  <div class="flex-1">
+                    <h4 class="text-lg sm:text-xl font-bold text-slate-900 font-heading group-hover:text-purple-700 transition-colors m-0">{req.title}</h4>
+                    <p class="text-sm text-slate-500 mt-1 font-light">{req.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Business Ledger -->
+          <div x-show="activeTab === 'business'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-cloak>
+            <div class="border-t-2 border-slate-900">
+              {[
+                { title: 'Proposed Company Names', desc: 'Submit 2-3 options in order of preference.' },
+                { title: 'Registered Office Address', desc: 'Physical location in Ghana including digital address.' },
+                { title: 'Nature of Business', desc: 'Clear description of your intended commercial activities.' }
+              ].map((req, i) => (
+                <div class="group py-4 sm:py-5 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 hover:bg-amber-50/50 transition-colors px-4 sm:px-6 -mx-4 sm:-mx-6">
+                  <div class="hidden sm:block text-slate-300 font-mono text-sm tracking-widest group-hover:text-amber-500 transition-colors">0{i + 1}</div>
+                  <div class="flex-1">
+                    <h4 class="text-lg sm:text-xl font-bold text-slate-900 font-heading group-hover:text-amber-600 transition-colors m-0">{req.title}</h4>
+                    <p class="text-sm text-slate-500 mt-1 font-light">{req.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- CTA aligned with Ledger -->
+          <div class="mt-12 text-left">
+            <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-slate-900 text-white font-bold uppercase tracking-widest text-xs hover:bg-slate-800 transition-colors shadow-lg rounded-xl">
+              Get Started <i class="ph-bold ph-arrow-right"></i>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

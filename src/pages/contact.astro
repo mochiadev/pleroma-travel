@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact Us - Pleroma Travel Consult" activeNav="contact">
+  <!-- Hero -->
+  <!-- Premium Hero Section -->
+  <header class="relative pt-32 pb-24 lg:pt-40 lg:pb-32 bg-slate-900 overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0 bg-slate-900">
+      <img src="/images/contact-hero.webp" alt="Contact Us" class="w-full h-full object-cover opacity-50 object-center">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-slate-900/30"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-right">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-[2px] bg-amber-500"></div>
+          <span class="text-amber-500 font-bold text-xs tracking-widest uppercase">24/7 Support</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 tracking-tight leading-tight">
+          Get In Touch
+        </h1>
+        <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
+          Whether you're ready to start your journey or just have a few questions, our team of experts is here to help you navigate your travel and legal requirements.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contact & Form Section -->
+  <section class="py-24 bg-slate-50 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-2xl bg-white border border-slate-100">
+
+        <!-- Contact Info Pane -->
+        <div class="bg-slate-900 p-12 lg:p-16 flex flex-col justify-center relative z-10 text-white">
+          <div class="absolute -right-20 -top-20 w-64 h-64 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+          <span class="text-amber-500 font-bold tracking-wider uppercase text-xs mb-2">Connect</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 font-heading">Visit Our <span class="italic font-light text-slate-300">Headquarters</span></h2>
+          <p class="text-slate-400 mb-12 font-light leading-relaxed">We recommend calling us first to schedule an appointment, ensuring we have the right expert available for your specific needs.</p>
+
+          <div class="space-y-8 relative z-10">
+            <div class="flex items-start gap-4 group">
+              <div class="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-amber-500 shrink-0 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition-all">
+                <i class="ph-bold ph-map-pin text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">Address</h4>
+                <p class="text-slate-400 text-sm mt-1">JPGH+M6 Sowutoum, Accra, Ghana<br>(Near Pentecost University)</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 group">
+              <div class="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-amber-500 shrink-0 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition-all">
+                <i class="ph-bold ph-phone text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">Phone</h4>
+                <p class="text-slate-400 text-sm mb-1 mt-1">Mon-Fri: 8am - 5pm</p>
+                <a href="tel:+233558009078" class="text-white font-bold hover:text-amber-400 transition-colors">+233 55 800 9078</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 group">
+              <div class="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-amber-500 shrink-0 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition-all">
+                <i class="ph-bold ph-envelope-simple text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">Email</h4>
+                <p class="text-slate-400 text-sm mb-1 mt-1">24/7 Support</p>
+                <a href="mailto:pleromatravelconsult@gmail.com" class="text-white font-bold hover:text-amber-400 transition-colors">pleromatravelconsult@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Pane -->
+        <div class="p-12 lg:p-16 flex flex-col justify-center bg-white">
+          <h3 class="text-2xl font-bold text-slate-900 mb-2 font-heading">Send us a Message</h3>
+          <p class="text-slate-500 mb-8 font-light">Fill out the form below and we will get back to you within 24 hours.</p>
+
+          <form action="#" method="POST" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="first-name" class="block text-sm font-bold text-slate-700 mb-2">First Name</label>
+                <input type="text" id="first-name" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all bg-slate-50/50" placeholder="John" required>
+              </div>
+              <div>
+                <label for="last-name" class="block text-sm font-bold text-slate-700 mb-2">Last Name</label>
+                <input type="text" id="last-name" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all bg-slate-50/50" placeholder="Doe" required>
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-bold text-slate-700 mb-2">Email Address</label>
+              <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all bg-slate-50/50" placeholder="john@example.com" required>
+            </div>
+
+            <div>
+              <label for="subject" class="block text-sm font-bold text-slate-700 mb-2">Subject</label>
+              <select id="subject" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all bg-slate-50/50 text-slate-700" required>
+                <option value="" disabled selected>Select an inquiry type</option>
+                <option value="work-permit">Work Permits</option>
+                <option value="study-abroad">Study Abroad</option>
+                <option value="tourist-visa">Tourist Visa</option>
+                <option value="business">Business Support</option>
+                <option value="other">Other / General</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-bold text-slate-700 mb-2">Message</label>
+              <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all resize-none bg-slate-50/50" placeholder="How can we help you today?" required></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-slate-800 transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-2 tracking-wide uppercase text-sm">
+              Send Message <i class="ph-bold ph-paper-plane-right"></i>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 bg-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        
+        <!-- Left Pane: Illustration & Intro -->
+        <div data-aos="fade-right" class="sticky top-24">
+          <span class="text-amber-500 font-bold tracking-wider uppercase text-xs mb-4 block">Got Questions?</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight font-heading">We Have the <span class="italic font-light text-slate-500">Answers</span></h2>
+          <p class="text-slate-600 mb-10 text-lg font-light">Whether you're curious about study abroad placements, visa requirements, or language proficiency, find all the details you need right here.</p>
+          <img src="/images/faq_illus.svg" alt="FAQ Illustration" class="w-full max-w-sm mx-auto lg:mx-0 drop-shadow-sm" />
+        </div>
+
+        <!-- Right Pane: Accordions -->
+        <div x-data="{ active: null }" class="space-y-4" data-aos="fade-left">
+          {[
+            {
+              q: 'Do you guarantee visa approval?',
+              a: 'No agency can guarantee visa approval as it is the sole discretion of the embassy. However, our expertise significantly increases your chances of success.'
+            },
+            {
+              q: 'Do you assist with scholarships and financial aid?',
+              a: 'Yes! We actively guide our students on available scholarship opportunities and assist in preparing compelling scholarship applications to help reduce the financial burden of studying overseas.'
+            },
+            {
+              q: 'Can I work while studying abroad?',
+              a: 'In most popular study destinations like the UK, Canada, and Australia, international students are permitted to work part-time (usually up to 20 hours per week) during academic terms and full-time during holidays. We will brief you on the specific work rights for your chosen country.'
+            },
+            {
+              q: 'Do I need to take the IELTS or TOEFL?',
+              a: 'English language requirements vary by university and country. While many institutions require IELTS or TOEFL, some may waive these requirements based on your previous education or offer alternative testing options. We will advise you based on your specific profile.'
+            }
+          ].map((item, index) => (
+            <div class="bg-slate-50 rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:border-amber-200 transition-colors">
+              <button @click={`active = (active === ${index} ? null : ${index})`}
+                class="w-full flex items-center justify-between p-6 text-left font-bold text-slate-900 focus:outline-none">
+                {item.q}
+                <i class="ph-bold ph-caret-down transition-transform duration-300 text-amber-500" :class={`{ 'rotate-180': active === ${index} }`}></i>
+              </button>
+              <div x-show={`active === ${index}`} x-collapse x-cloak>
+                <div class="p-6 pt-0 text-slate-600 text-sm leading-relaxed border-t border-slate-200/50 mt-2">
+                  {item.a}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section (Full Width, Pre-Footer) -->
+  <section class="h-[500px] w-full relative">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.594601081457!2d-0.27192469999999996!3d5.6267071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf99000437a135%3A0xcd944d1fdf3f5411!2sPleroma%20Travel%20Consult!5e0!3m2!1sen!2sgh!4v1755532451848!5m2!1sen!2sgh"
+      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      class="absolute inset-0 grayscale hover:grayscale-0 transition-all duration-700 pointer-events-auto"></iframe>
+  </section>
+</BaseLayout>

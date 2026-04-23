@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Our Services - Pleroma Travel Consult" activeNav="services">
+  <!-- Premium Hero Section -->
+  <header class="relative pt-32 pb-24 lg:pt-40 lg:pb-32 bg-slate-900 overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0 bg-slate-900">
+      <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=1621&q=80" alt="Services Hero" class="w-full h-full object-cover opacity-50 object-center">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-slate-900/30"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-right">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-[2px] bg-amber-500"></div>
+          <span class="text-amber-500 font-bold text-xs tracking-widest uppercase">Expertise & Solutions</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 tracking-tight leading-tight">
+          Our Services
+        </h1>
+        <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
+          Comprehensive travel, visa, and business solutions tailored to your global ambitions.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick Services Grid -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="inline-block px-4 py-1 rounded-full bg-purple-100 text-purple-600 font-bold text-sm mb-4 tracking-wider uppercase">Expertise</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Explore Our Solutions</h2>
+        <p class="text-slate-600">Select a category to learn more about how we can help you.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Study Abroad -->
+        <a href="/services/study-abroad" class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block h-full border border-slate-100" data-aos="fade-up">
+          <div class="h-48 overflow-hidden relative">
+            <img src="/images/study-abroad.jpg" alt="Study Abroad" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-purple-900/20 group-hover:bg-purple-900/40 transition-colors"></div>
+            <div class="absolute bottom-4 left-4 w-12 h-12 bg-white/90 backdrop-blur rounded-xl flex items-center justify-center text-purple-600 shadow-lg">
+              <i class="ph-fill ph-graduation-cap text-2xl"></i>
+            </div>
+          </div>
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">Study Abroad</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-4">Global university placements with visa success guarantee. Start your academic journey today.</p>
+            <span class="text-purple-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Explore Options <i class="ph-bold ph-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Work Permit -->
+        <a href="/services/work-permit" class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block h-full border border-slate-100" data-aos="fade-up" data-aos-delay="100">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Work Permit" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-blue-900/20 group-hover:bg-blue-900/40 transition-colors"></div>
+            <div class="absolute bottom-4 left-4 w-12 h-12 bg-white/90 backdrop-blur rounded-xl flex items-center justify-center text-blue-600 shadow-lg">
+              <i class="ph-fill ph-briefcase text-2xl"></i>
+            </div>
+          </div>
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">Work Permit</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-4">Verified international job placements with legal authorization in top destinations.</p>
+            <span class="text-blue-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Find Opportunities <i class="ph-bold ph-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Tourist Visa -->
+        <a href="/services/tourist-visa" class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block h-full border border-slate-100" data-aos="fade-up" data-aos-delay="200">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?auto=format&fit=crop&w=600&q=80" alt="Tourist Visa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-amber-900/20 group-hover:bg-amber-900/40 transition-colors"></div>
+            <div class="absolute bottom-4 left-4 w-12 h-12 bg-white/90 backdrop-blur rounded-xl flex items-center justify-center text-amber-500 shadow-lg">
+              <i class="ph-fill ph-airplane-tilt text-2xl"></i>
+            </div>
+          </div>
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-amber-600 transition-colors">Tourist Visa</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-4">Hassle-free holiday and family visit visa processing with high approval rates.</p>
+            <span class="text-amber-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Plan Trip <i class="ph-bold ph-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Legal Documents -->
+        <a href="/legal-documents" class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block h-full border border-slate-100" data-aos="fade-up">
+          <div class="h-48 overflow-hidden relative">
+            <img src="/images/passport.jpg" alt="Legal Documents" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-teal-900/20 group-hover:bg-teal-900/40 transition-colors"></div>
+            <div class="absolute bottom-4 left-4 w-12 h-12 bg-white/90 backdrop-blur rounded-xl flex items-center justify-center text-teal-600 shadow-lg">
+              <i class="ph-fill ph-identification-card text-2xl"></i>
+            </div>
+          </div>
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors">Legal Documents</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-4">Fast-track passport applications, renewals, and birth certificate assistance.</p>
+            <span class="text-teal-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Get Started <i class="ph-bold ph-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Business Support -->
+        <a href="/business-support" class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block h-full border border-slate-100" data-aos="fade-up" data-aos-delay="100">
+          <div class="h-48 overflow-hidden relative">
+            <img src="/images/bizreg.jpg" alt="Business Support" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/40 transition-colors"></div>
+            <div class="absolute bottom-4 left-4 w-12 h-12 bg-white/90 backdrop-blur rounded-xl flex items-center justify-center text-slate-700 shadow-lg">
+              <i class="ph-fill ph-buildings text-2xl"></i>
+            </div>
+          </div>
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">Business Support</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-4">Complete business registration, compliance, and strategy consultation services.</p>
+            <span class="text-purple-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Register Now <i class="ph-bold ph-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="inline-block px-4 py-1 rounded-full bg-purple-100 text-purple-600 font-bold text-sm mb-4 tracking-wider uppercase">Help</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+        <p class="text-slate-600">Find answers to common questions about our services.</p>
+      </div>
+
+      <div class="space-y-4" x-data="{ active: null }">
+        <!-- FAQ 1 -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden" data-aos="fade-up">
+          <button @click="active = active === 1 ? null : 1" class="w-full flex items-center justify-between p-6 text-left bg-slate-50 hover:bg-slate-100 transition-colors focus:outline-none">
+            <span class="font-bold text-slate-900">How long does the visa application process take?</span>
+            <i class="ph-bold ph-caret-down text-2xl text-purple-600 transition-transform duration-300" :class="active === 1 ? 'rotate-180' : ''"></i>
+          </button>
+          <div x-show="active === 1" x-collapse class="bg-white" x-cloak>
+            <div class="p-6 text-slate-600 border-t border-slate-100">
+              Processing times vary depending on the visa type and destination country. Typically, tourist visas take 2-4 weeks, while work permits may take 4-8 weeks. We provide estimated timelines during your consultation.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden" data-aos="fade-up">
+          <button @click="active = active === 2 ? null : 2" class="w-full flex items-center justify-between p-6 text-left bg-slate-50 hover:bg-slate-100 transition-colors focus:outline-none">
+            <span class="font-bold text-slate-900">What documents do I need for passport renewal?</span>
+            <i class="ph-bold ph-caret-down text-2xl text-purple-600 transition-transform duration-300" :class="active === 2 ? 'rotate-180' : ''"></i>
+          </button>
+          <div x-show="active === 2" x-collapse class="bg-white" x-cloak>
+            <div class="p-6 text-slate-600 border-t border-slate-100">
+              You'll need your current passport, completed application form, birth certificate, and passport-sized photos. We assist with ensuring all documentation meets the strict requirements.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden" data-aos="fade-up">
+          <button @click="active = active === 3 ? null : 3" class="w-full flex items-center justify-between p-6 text-left bg-slate-50 hover:bg-slate-100 transition-colors focus:outline-none">
+            <span class="font-bold text-slate-900">Do you guarantee visa approval?</span>
+            <i class="ph-bold ph-caret-down text-2xl text-purple-600 transition-transform duration-300" :class="active === 3 ? 'rotate-180' : ''"></i>
+          </button>
+          <div x-show="active === 3" x-collapse class="bg-white" x-cloak>
+            <div class="p-6 text-slate-600 border-t border-slate-100">
+              No visa agency can guarantee approval as decisions rest solely with embassies. However, we ensure your application is meticulously prepared to maximize your chances of success.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden" data-aos="fade-up">
+          <button @click="active = active === 4 ? null : 4" class="w-full flex items-center justify-between p-6 text-left bg-slate-50 hover:bg-slate-100 transition-colors focus:outline-none">
+            <span class="font-bold text-slate-900">Can you help with urgent visa applications?</span>
+            <i class="ph-bold ph-caret-down text-2xl text-purple-600 transition-transform duration-300" :class="active === 4 ? 'rotate-180' : ''"></i>
+          </button>
+          <div x-show="active === 4" x-collapse class="bg-white" x-cloak>
+            <div class="p-6 text-slate-600 border-t border-slate-100">
+              Yes, we offer expedited processing for urgent cases. Contact us directly to discuss your timeline and we will do our best to accommodate your needs.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Tourist Visas - Pleroma Travel Consult" activeNav="services">
+  <!-- Premium Hero Section -->
+  <header class="relative pt-32 pb-24 lg:pt-40 lg:pb-32 bg-slate-900 overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0 bg-slate-900">
+      <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1920&q=80" alt="Beautiful Beach Vacation" class="w-full h-full object-cover opacity-50 object-center">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-slate-900/30"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-right">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-[2px] bg-teal-500"></div>
+          <span class="text-teal-500 font-bold text-xs tracking-widest uppercase">Leisure Travel</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 tracking-tight leading-tight">
+          Tourist Visas
+        </h1>
+        <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
+          Experience hassle-free tourist and visit visa processing for your holidays and family reunions.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Editorial Intro -->
+  <section class="py-16 lg:py-20 bg-white relative" id="about">
+    <div class="container-custom relative z-10">
+      <div class="flex flex-col-reverse lg:flex-row gap-12 lg:gap-16 items-center">
+        
+        <!-- Content Column (Left) -->
+        <div class="lg:w-1/2" data-aos="fade-right">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="w-12 h-[2px] bg-teal-300"></span>
+            <span class="text-teal-500 tracking-[0.2em] text-xs font-bold uppercase">Leisure Travel</span>
+          </div>
+          
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-slate-900 leading-[1.1] tracking-tight font-heading">
+            Explore the World <span class="italic font-light text-slate-500">Without Visa Stress</span>
+          </h2>
+          
+          <p class="text-lg text-slate-600 mb-8 leading-relaxed font-light">
+            Whether it's a family visit, holiday, or business trip, we ensure your visa application is accurate, complete, and submitted on time.
+          </p>
+
+          <div class="space-y-6 border-l border-slate-200 pl-6">
+            <div class="relative">
+              <div class="absolute -left-[1.6rem] top-1.5 w-1.5 h-1.5 rounded-full bg-teal-500"></div>
+              <h4 class="text-lg font-bold text-slate-900 mb-1">Application Review</h4>
+              <p class="text-slate-500 text-sm leading-relaxed font-light">We review your documents to ensure nothing is missing or incorrect.</p>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-[1.6rem] top-1.5 w-1.5 h-1.5 rounded-full bg-amber-400"></div>
+              <h4 class="text-lg font-bold text-slate-900 mb-1">Interview Preparation</h4>
+              <p class="text-slate-500 text-sm leading-relaxed font-light">Get coaching on what to expect and how to present your case.</p>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-[1.6rem] top-1.5 w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+              <h4 class="text-lg font-bold text-slate-900 mb-1">Fast Tracking</h4>
+              <p class="text-slate-500 text-sm leading-relaxed font-light">Expedited options available for urgent travel plans.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image Column (Right) -->
+        <div class="lg:w-1/2 w-full" data-aos="fade-left">
+          <div class="w-full aspect-[4/3] sm:aspect-video lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-100">
+            <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=1200&q=80" alt="Travel" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Requirements -->
+  <section class="py-16 lg:py-20 bg-teal-900 relative overflow-hidden">
+    <div class="absolute -right-40 top-40 w-96 h-96 bg-teal-400/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="container-custom relative z-10">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
+        
+        <!-- Left Context -->
+        <div class="lg:w-1/3" data-aos="fade-right">
+          <div class="sticky top-32">
+            <span class="inline-flex items-center gap-2 text-teal-300 text-xs font-bold tracking-[0.2em] uppercase mb-4">
+              <i class="ph-bold ph-folder-notch-open"></i> Documentation
+            </span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white leading-[1.1] tracking-tight font-heading mb-4">
+              Official <span class="italic font-light text-teal-200/70">Requirements</span>
+            </h2>
+            <p class="text-base text-teal-100/80 font-light mb-6">
+              A meticulously prepared dossier is the cornerstone of a successful tourist visa application.
+            </p>
+          </div>
+        </div>
+
+        <!-- Ledger List -->
+        <div class="lg:w-2/3" data-aos="fade-left">
+          <div class="border-t-2 border-white/20">
+            {[
+              { title: 'Valid Passport' },
+              { title: 'Certified Bank Statements' },
+              { title: 'Confirmed Travel Itineraries' },
+              { title: 'Proof of Ties to Home Country' },
+              { title: 'Strategic Filing (Building your case)' }
+            ].map((req, i) => (
+              <div class="group py-4 sm:py-5 border-b border-white/10 flex items-center gap-4 sm:gap-6 hover:bg-teal-800 transition-colors px-4 sm:px-6 -mx-4 sm:-mx-6 rounded-lg">
+                <div class="text-teal-500 font-mono text-sm tracking-widest group-hover:text-teal-300 transition-colors">0{i + 1}</div>
+                <h4 class="text-lg sm:text-xl font-bold text-white font-heading group-hover:text-teal-200 transition-colors m-0">{req.title}</h4>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Destination Gallery & CTA -->
+  <section class="py-16 lg:py-20 bg-slate-50 border-t border-slate-100 relative overflow-hidden">
+    <div class="container-custom relative z-10">
+      <!-- Section Header -->
+      <div class="text-center mb-12">
+        <span class="inline-block px-4 py-1 rounded-full bg-teal-100 text-teal-600 font-bold text-xs mb-4 tracking-[0.2em] uppercase border border-teal-200 shadow-sm">Inspiration</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 leading-[1.1] tracking-tight font-heading mb-4">
+          Ready for Your Next <span class="italic font-light text-slate-500">Adventure?</span>
+        </h2>
+      </div>
+
+      <!-- Bento Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 mb-16">
+        <!-- Large Left Image -->
+        <div class="md:col-span-6 md:row-span-2 rounded-2xl overflow-hidden shadow-lg group h-[300px] md:h-auto">
+          <img src="/images/tour7.webp" alt="Tourists Looking at Map" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+        </div>
+
+        <!-- Top Right Images -->
+        <div class="md:col-span-3 rounded-2xl overflow-hidden shadow-md group h-[200px] md:h-[250px]">
+          <img src="/images/tour1.webp" alt="Japan Cherry Blossoms" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+        </div>
+        <div class="md:col-span-3 rounded-2xl overflow-hidden shadow-md group h-[200px] md:h-[250px]">
+          <img src="/images/tour2.webp" alt="Singapore Merlion" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+        </div>
+
+        <!-- Middle Right Images -->
+        <div class="md:col-span-3 rounded-2xl overflow-hidden shadow-md group h-[200px] md:h-[250px]">
+          <img src="/images/tour3.webp" alt="Singapore Flyer" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+        </div>
+        <div class="md:col-span-3 rounded-2xl overflow-hidden shadow-md group h-[200px] md:h-[250px]">
+          <img src="/images/tour4.webp" alt="European City Walk" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+        </div>
+
+        <!-- Bottom Row Images (Spanning wide) -->
+        <div class="md:col-span-3 rounded-2xl overflow-hidden shadow-md group h-[200px] md:h-[250px]">
+          <img src="/images/tour5.webp" alt="Singapore Night Skyline" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+        </div>
+        <div class="md:col-span-3 rounded-2xl overflow-hidden shadow-md group h-[200px] md:h-[250px]">
+          <img src="/images/tour6.webp" alt="Hiker overlooking lake" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+        </div>
+      </div>
+
+      <!-- Mini CTA Section (Merged) -->
+      <div class="bg-slate-900 rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden shadow-2xl mt-12" data-aos="fade-up">
+        <!-- Atmospheric Background -->
+        <div class="absolute inset-0 noise-bg opacity-10 mix-blend-overlay z-0"></div>
+        <div class="absolute -left-20 -top-20 w-48 h-48 bg-teal-500 rounded-full blur-3xl opacity-30"></div>
+        <div class="absolute -right-20 -bottom-20 w-48 h-48 bg-blue-500 rounded-full blur-3xl opacity-30"></div>
+        
+        <div class="relative z-10 text-center md:text-left">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2 font-heading tracking-tight">Let's Travel Together</h2>
+          <p class="text-slate-300 font-light text-sm sm:text-base max-w-md">Turn your travel dreams into reality. Contact our experts today to start planning a journey you'll never forget.</p>
+        </div>
+        
+        <div class="relative z-10 shrink-0">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-900 font-bold uppercase tracking-widest text-xs sm:text-sm hover:bg-slate-100 hover:scale-105 transition-all shadow-lg rounded-xl">
+            Start Planning <i class="ph-bold ph-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

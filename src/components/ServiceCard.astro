@@ -1,0 +1,45 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  href: string;
+  icon: string;
+  iconColor: string; // Tailwind color name like 'purple', 'blue', 'teal', etc.
+}
+
+const { title, description, image, href, icon, iconColor } = Astro.props;
+
+// Map simple color names to Tailwind utility classes
+const colorMap: Record<string, { bg: string, text: string }> = {
+  purple: { bg: 'bg-purple-600', text: 'text-purple-600' },
+  blue: { bg: 'bg-blue-600', text: 'text-blue-600' },
+  teal: { bg: 'bg-teal-500', text: 'text-teal-600' },
+  indigo: { bg: 'bg-indigo-600', text: 'text-indigo-600' },
+  amber: { bg: 'bg-amber-500', text: 'text-amber-600' },
+  rose: { bg: 'bg-rose-500', text: 'text-rose-600' },
+  emerald: { bg: 'bg-emerald-500', text: 'text-emerald-600' },
+  orange: { bg: 'bg-orange-500', text: 'text-orange-600' }
+};
+
+const colors = colorMap[iconColor] || colorMap.purple;
+---
+
+<div class="card-base card-hover group cursor-pointer overflow-hidden p-0 h-full flex flex-col">
+  <div class="h-48 overflow-hidden relative shrink-0">
+    <img src={image} alt={title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+    <div class="absolute bottom-4 left-4 text-white">
+      <div class={`${colors.bg} w-10 h-10 rounded-lg flex items-center justify-center mb-2 shadow-lg`}>
+        <i class={`${icon} text-2xl`}></i>
+      </div>
+      <h3 class="text-xl font-bold text-white m-0">{title}</h3>
+    </div>
+  </div>
+  <div class="p-6 flex flex-col flex-1">
+    <p class="text-slate-600 mb-4 line-clamp-2 flex-1">{description}</p>
+    <a href={href} class={`inline-flex items-center ${colors.text} font-semibold group-hover:translate-x-1 transition-transform mt-auto`}>
+      Explore <i class="ph-bold ph-arrow-right ml-2"></i>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,245 @@
+---
+interface Props {
+  activeNav?: string;
+  heroMode?: boolean;
+}
+const { activeNav = '', heroMode = false } = Astro.props;
+
+// Determine base classes based on heroMode
+const navBaseClasses = "fixed top-0 w-full z-50 transition-all duration-300 border-b shadow-sm";
+---
+
+<nav 
+  class={navBaseClasses}
+  id="main-nav"
+  x-data=`{ 
+    scrolled: false, 
+    mobileMenuOpen: false,
+    megaMenuOpen: false,
+    init() {
+      if (${heroMode}) {
+        this.scrolled = window.pageYOffset > 50;
+        window.addEventListener('scroll', () => {
+          this.scrolled = window.pageYOffset > 50;
+        });
+      } else {
+        this.scrolled = true;
+      }
+    } 
+  }`
+  :class="scrolled ? 'bg-white border-slate-200 is-scrolled' : 'bg-transparent border-white/20 is-transparent'"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+
+      <!-- Logo -->
+      <a href="/" class="flex-shrink-0 flex items-center gap-3 relative z-10">
+        <img src="/images/ptc_llogo.png" alt="Pleroma Travel Consult" class="h-10 w-auto" :class="!scrolled && 'brightness-0 invert'" />
+        <div class="flex flex-col leading-tight" :class="!scrolled ? 'text-white' : 'text-slate-900'">
+          <span class="font-heading font-bold text-lg tracking-wider">PLEROMA</span>
+          <span class="font-heading font-light text-xs tracking-[0.15em] uppercase opacity-70">Travel Consult</span>
+        </div>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden lg:flex items-center space-x-8 h-full">
+        <a href="/" class={`nav-link font-semibold ${activeNav === 'home' ? 'text-purple-600' : ''}`} :class="!scrolled && activeNav !== 'home' ? 'text-white' : 'text-slate-700 hover:text-purple-600'">Home</a>
+
+        <!-- Services Full Width Mega Menu -->
+        <div class="h-full flex items-center">
+          <button 
+            @mouseenter="megaMenuOpen = true"
+            @mouseleave="megaMenuOpen = false"
+            class="nav-link flex items-center gap-1 focus:outline-none font-semibold transition-all"
+            :class="[
+              !scrolled ? 'text-white hover:text-white' : 'text-slate-700 hover:text-purple-600',
+              megaMenuOpen ? 'active text-purple-600' : ''
+            ]"
+          >
+            What We Offer <i class="ph-bold ph-caret-down text-sm transition-transform" :class="megaMenuOpen ? '-rotate-180' : ''"></i>
+          </button>
+        </div>
+
+        <!-- About Dropdown -->
+        <div class="group relative h-full flex items-center" x-data="{ aboutOpen: false }" @mouseenter="aboutOpen = true" @mouseleave="aboutOpen = false">
+          <button class="nav-link flex items-center gap-1 focus:outline-none font-semibold" :class="[
+            !scrolled ? 'text-white hover:text-white' : 'text-slate-700 hover:text-purple-600',
+            aboutOpen ? 'active' : ''
+          ]">
+            About <i class="ph-bold ph-caret-down text-sm transition-transform group-hover:-rotate-180"></i>
+          </button>
+          <div 
+            x-show="aboutOpen"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 translate-y-2"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 translate-y-2"
+            class="absolute top-full right-0 w-48 bg-white rounded-xl shadow-xl border border-slate-100 py-2 mt-[-10px]"
+            x-cloak
+          >
+            <a href="/about#company" class="block px-4 py-2 text-sm text-slate-600 hover:bg-purple-50 hover:text-purple-600">Company Story</a>
+            <a href="/about#team" class="block px-4 py-2 text-sm text-slate-600 hover:bg-purple-50 hover:text-purple-600">Our Team</a>
+          </div>
+        </div>
+
+        <a href="/contact" class="btn-glow px-6 py-2.5 text-sm">Contact Us</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button @click="mobileMenuOpen = true" class="lg:hidden p-2 transition-colors relative z-10" :class="!scrolled ? 'text-white hover:text-white/80' : 'text-slate-700 hover:text-purple-600'">
+        <i class="ph ph-list text-3xl"></i>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Full Width Dropdown Panel -->
+  <div 
+    x-show="megaMenuOpen"
+    @mouseenter="megaMenuOpen = true"
+    @mouseleave="megaMenuOpen = false"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0 -translate-y-4"
+    x-transition:enter-end="opacity-100 translate-y-0"
+    x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100 translate-y-0"
+    x-transition:leave-end="opacity-0 -translate-y-4"
+    class="absolute top-full left-0 w-full bg-white border-y border-slate-200 shadow-xl overflow-hidden"
+    x-cloak
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-4 gap-8">
+        
+        <!-- Intro Col -->
+        <div class="col-span-1 pr-6 border-r border-slate-200">
+          <h3 class="text-2xl font-heading font-bold text-slate-900 mb-4">Our Services</h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">Comprehensive travel, legal, and corporate solutions tailored to your unique global journey.</p>
+          <a href="/services" class="inline-flex items-center gap-2 text-purple-600 font-bold text-sm hover:text-purple-700 transition-colors group">
+            View All Services <span class="group-hover:translate-x-1 transition-transform">-&gt;</span>
+          </a>
+        </div>
+
+        <!-- Travel -->
+        <div class="col-span-1">
+          <h6 class="flex items-center gap-2 text-xs font-bold text-purple-600 uppercase tracking-widest mb-6">
+            <i class="ph-bold ph-airplane-tilt text-lg"></i> Travel
+          </h6>
+          <ul class="space-y-4">
+            <li><a href="/services/study-abroad" class="text-sm text-slate-600 hover:text-purple-600 flex items-center gap-2 group"><i class="ph-fill ph-graduation-cap text-slate-400 group-hover:text-purple-600"></i> Study Abroad</a></li>
+            <li><a href="/services/work-permit" class="text-sm text-slate-600 hover:text-purple-600 flex items-center gap-2 group"><i class="ph-fill ph-briefcase text-slate-400 group-hover:text-purple-600"></i> Work Permits</a></li>
+            <li><a href="/services/tourist-visa" class="text-sm text-slate-600 hover:text-purple-600 flex items-center gap-2 group"><i class="ph-fill ph-suitcase-rolling text-slate-400 group-hover:text-purple-600"></i> Tourist Visas</a></li>
+            <li><a href="/services/schengen-visa" class="text-sm text-slate-600 hover:text-purple-600 flex items-center gap-2 group"><i class="ph-fill ph-globe-hemisphere-west text-slate-400 group-hover:text-purple-600"></i> Schengen Visa</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div class="col-span-1">
+          <h6 class="flex items-center gap-2 text-xs font-bold text-indigo-600 uppercase tracking-widest mb-6">
+            <i class="ph-bold ph-files text-lg"></i> Legal Documents
+          </h6>
+          <ul class="space-y-4">
+            <li><a href="/legal-documents#passport" class="text-sm text-slate-600 hover:text-indigo-600 flex items-center gap-2 group"><i class="ph-fill ph-identification-card text-slate-400 group-hover:text-indigo-600"></i> Passport Services</a></li>
+            <li><a href="/legal-documents#birth-certificate" class="text-sm text-slate-600 hover:text-indigo-600 flex items-center gap-2 group"><i class="ph-fill ph-scroll text-slate-400 group-hover:text-indigo-600"></i> Birth Certificate</a></li>
+          </ul>
+        </div>
+
+        <!-- Business -->
+        <div class="col-span-1">
+          <h6 class="flex items-center gap-2 text-xs font-bold text-amber-600 uppercase tracking-widest mb-6">
+            <i class="ph-bold ph-buildings text-lg"></i> Business
+          </h6>
+          <ul class="space-y-4">
+            <li><a href="/business-support#registration" class="text-sm text-slate-600 hover:text-amber-600 flex items-center gap-2 group"><i class="ph-fill ph-file-text text-slate-400 group-hover:text-amber-600"></i> Business Reg.</a></li>
+            <li><a href="/business-support#consultation" class="text-sm text-slate-600 hover:text-amber-600 flex items-center gap-2 group"><i class="ph-fill ph-chart-line-up text-slate-400 group-hover:text-amber-600"></i> Consultation</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div x-show="mobileMenuOpen" class="lg:hidden fixed inset-0 z-[60]" x-cloak>
+    <div x-show="mobileMenuOpen" x-transition.opacity class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" @click="mobileMenuOpen = false"></div>
+
+    <div 
+      x-show="mobileMenuOpen"
+      x-transition:enter="transform transition ease-in-out duration-500"
+      x-transition:enter-start="translate-x-full"
+      x-transition:enter-end="translate-x-0"
+      x-transition:leave="transform transition ease-in-out duration-500"
+      x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="translate-x-full"
+      class="absolute inset-y-0 right-0 w-full max-w-sm bg-slate-900 flex flex-col shadow-2xl"
+    >
+      <div class="flex items-center justify-between p-6 border-b border-slate-800">
+        <span class="text-white font-heading font-bold tracking-widest text-lg">MENU</span>
+        <button @click="mobileMenuOpen = false" class="text-slate-400 hover:text-white transition-colors">
+          <i class="ph ph-x text-2xl"></i>
+        </button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto p-6 scrollbar-hide">
+        <nav class="space-y-6">
+          <a href="/" class="block text-2xl font-heading font-bold text-white hover:text-purple-400">Home</a>
+
+          <div class="group relative w-full" x-data="{ open: true }">
+            <button @click="open = !open" class="flex items-center justify-between w-full text-2xl font-heading font-bold text-white hover:text-purple-400 transition-colors">
+              Services <i class="ph-bold ph-caret-down text-lg transition-transform duration-300" :class="open ? '-rotate-180' : ''"></i>
+            </button>
+            <div x-show="open" x-collapse>
+              <div class="pt-4 space-y-6">
+                <!-- Travel -->
+                <div class="space-y-3">
+                  <p class="text-xs font-bold text-purple-400 uppercase tracking-widest flex items-center gap-2"><i class="ph-bold ph-airplane-tilt"></i> Travel</p>
+                  <div class="pl-4 border-l border-slate-800 space-y-3">
+                    <a href="/services/study-abroad" class="text-lg text-slate-300 hover:text-white block">Study Abroad</a>
+                    <a href="/services/work-permit" class="text-lg text-slate-300 hover:text-white block">Work Permits</a>
+                    <a href="/services/tourist-visa" class="text-lg text-slate-300 hover:text-white block">Tourist Visas</a>
+                    <a href="/services/schengen-visa" class="text-lg text-slate-300 hover:text-white block">Schengen Visa</a>
+                  </div>
+                </div>
+                <!-- Legal Documents -->
+                <div class="space-y-3">
+                  <p class="text-xs font-bold text-indigo-400 uppercase tracking-widest flex items-center gap-2"><i class="ph-bold ph-files"></i> Legal Documents</p>
+                  <div class="pl-4 border-l border-slate-800 space-y-3">
+                    <a href="/legal-documents#passport" class="text-lg text-slate-300 hover:text-white block">Passport Services</a>
+                    <a href="/legal-documents#birth-certificate" class="text-lg text-slate-300 hover:text-white block">Birth Certificate</a>
+                  </div>
+                </div>
+                <!-- Business -->
+                <div class="space-y-3">
+                  <p class="text-xs font-bold text-amber-400 uppercase tracking-widest flex items-center gap-2"><i class="ph-bold ph-buildings"></i> Business</p>
+                  <div class="pl-4 border-l border-slate-800 space-y-3">
+                    <a href="/business-support#registration" class="text-lg text-slate-300 hover:text-white block">Business Registration</a>
+                    <a href="/business-support#consultation" class="text-lg text-slate-300 hover:text-white block">Consultation</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="group relative w-full" x-data="{ open: false }">
+            <button @click="open = !open" class="flex items-center justify-between w-full text-2xl font-heading font-bold text-white hover:text-purple-400 transition-colors">
+              About <i class="ph-bold ph-caret-down text-lg transition-transform duration-300" :class="open ? '-rotate-180' : ''"></i>
+            </button>
+            <div x-show="open" x-collapse x-cloak>
+              <div class="pt-4 space-y-3 pl-4 border-l border-slate-800 mt-2">
+                <a href="/about#company" class="text-lg text-slate-300 hover:text-white block">Company Story</a>
+                <a href="/about#team" class="text-lg text-slate-300 hover:text-white block">Our Team</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      
+      <div class="p-6 border-t border-slate-800">
+        <a href="/contact" class="block w-full py-4 text-center bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl transition-colors">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

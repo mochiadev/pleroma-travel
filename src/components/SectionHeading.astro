@@ -1,0 +1,39 @@
+---
+interface Props {
+  tag?: string;
+  title: string;
+  highlight?: string;
+  description?: string;
+  align?: 'left' | 'center' | 'right';
+}
+
+const { tag, title, highlight, description, align = 'center' } = Astro.props;
+
+let alignmentClass = 'text-center mx-auto';
+let barAlignment = 'mx-auto';
+
+if (align === 'left') {
+  alignmentClass = 'text-left';
+  barAlignment = 'ml-0';
+} else if (align === 'right') {
+  alignmentClass = 'text-right ml-auto';
+  barAlignment = 'mr-0 ml-auto';
+}
+---
+
+<div class={`max-w-2xl mb-16 ${alignmentClass}`} data-aos="fade-up">
+  {tag && (
+    <span class="inline-block px-4 py-1 rounded-full bg-purple-50 text-purple-600 font-bold text-sm mb-4 tracking-wider uppercase border border-purple-100">
+      {tag}
+    </span>
+  )}
+  
+  <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-900 leading-tight">
+    {title} 
+    {highlight && <span class="text-purple-600">{highlight}</span>}
+  </h2>
+  
+  {description && <p class="text-slate-600 text-lg">{description}</p>}
+  
+  <div class={`h-1 w-20 bg-purple-500 mt-6 rounded-full ${barAlignment}`}></div>
+</div>

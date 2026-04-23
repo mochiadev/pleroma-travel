@@ -1,0 +1,59 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SpeedDial from '../components/SpeedDial.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  activeNav?: string;
+  heroMode?: boolean;
+}
+
+const { title, description = 'Your trusted partner for global opportunities.', activeNav = '', heroMode = false } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web" is:inline></script>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" is:inline></script>
+
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" is:inline></script>
+  </head>
+  <body class="bg-white font-body text-slate-900">
+    <Header activeNav={activeNav} heroMode={heroMode} />
+    
+    <main class="overflow-x-hidden">
+      <slot />
+    </main>
+
+    <Footer />
+    <SpeedDial />
+
+    <script is:inline>
+      // Initialize AOS animations when page loads
+      document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out',
+          once: true,
+          mirror: false
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,250 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About Us - Pleroma Travel Consult" activeNav="about">
+  <!-- Premium Hero Section -->
+  <header class="relative pt-32 pb-24 lg:pt-40 lg:pb-32 bg-slate-900 overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="/images/about-hero.avif" alt="About Us" class="w-full h-full object-cover opacity-30 object-center">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900/40"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-right">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-[2px] bg-amber-500"></div>
+          <span class="text-amber-500 font-bold text-xs tracking-widest uppercase">Our Firm</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 tracking-tight leading-tight">
+          About Us
+        </h1>
+        <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
+          Delivering strategic travel management and comprehensive corporate solutions with uncompromising integrity and excellence.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Corporate Essay & UI Section -->
+  <section class="py-24 bg-white relative" id="company">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+        <!-- Left Column: Essay Content -->
+        <div class="lg:col-span-8 space-y-10" data-aos="fade-right">
+          <div class="prose prose-lg prose-slate max-w-none">
+            <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6">Connecting You to Global Opportunities</h2>
+
+            <p class="text-slate-600 leading-relaxed mb-6">
+              Pleroma Travel Consult was built on trust and a simple mission: to connect local ambitions with global opportunities. We know that traveling, studying, or moving a business abroad can feel overwhelming because of constant rule changes. Our goal is to make that process as smooth and straightforward as possible for you.
+            </p>
+
+            <p class="text-slate-600 leading-relaxed mb-6">
+              Today, we are more than just a travel agency. We are a dedicated partner for individuals planning their academic or career futures abroad, and for businesses looking to expand internationally. From handling your visa applications to assisting with corporate registrations, we take care of the heavy lifting so you can focus on your actual journey.
+            </p>
+
+            <div class="my-12 relative">
+              <div class="absolute inset-y-0 left-0 w-1 bg-purple-500 rounded-full"></div>
+              <blockquote class="ml-8 text-xl font-medium text-slate-800 italic leading-relaxed">
+                "We don't just process applications—we open doors. Our careful attention to detail ensures your journey is seamless from start to finish."
+              </blockquote>
+              <div class="mt-4 ml-8 flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-purple-100">
+                  <img src="/images/author0.jpg" alt="Apostle Emmanuel Siayor" class="w-full h-full object-cover">
+                </div>
+                <div>
+                  <span class="block text-sm font-bold text-slate-900">Apostle Emmanuel Siayor</span>
+                  <span class="block text-xs text-purple-600 uppercase tracking-wider font-semibold">Founder & CEO</span>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-heading font-bold text-slate-900 mt-12 mb-4">How We Work</h3>
+            <p class="text-slate-600 leading-relaxed mb-6">
+              In an industry that can often be confusing, we promise clarity and honesty. We stay updated on the latest international rules and assign a dedicated expert to your case. Whether you are setting up a business overseas or moving for work, our approach is thorough and completely transparent. Your success is our greatest reward.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Column: Corporate UI Accents -->
+        <div class="lg:col-span-4 space-y-8" data-aos="fade-left" data-aos-delay="100">
+          <!-- Key Metrics Block -->
+          <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8">
+            <h4 class="text-sm font-bold text-slate-900 uppercase tracking-widest mb-6 border-b border-slate-200 pb-4">Key Metrics</h4>
+
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-purple-600 shrink-0 shadow-sm">
+                  <i class="ph-bold ph-globe-hemisphere-east text-xl"></i>
+                </div>
+                <div>
+                  <span class="block text-2xl font-bold text-slate-900 leading-none mb-1">20+</span>
+                  <span class="text-sm text-slate-500 font-medium">Global Destinations Served</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-purple-600 shrink-0 shadow-sm">
+                  <i class="ph-bold ph-shield-check text-xl"></i>
+                </div>
+                <div>
+                  <span class="block text-2xl font-bold text-slate-900 leading-none mb-1">98%</span>
+                  <span class="text-sm text-slate-500 font-medium">Compliance Success Rate</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-purple-600 shrink-0 shadow-sm">
+                  <i class="ph-bold ph-briefcase text-xl"></i>
+                </div>
+                <div>
+                  <span class="block text-2xl font-bold text-slate-900 leading-none mb-1">5y+</span>
+                  <span class="text-sm text-slate-500 font-medium">Industry Expertise</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Partner With Us CTA -->
+          <div class="bg-gradient-to-br from-slate-900 to-indigo-950 rounded-2xl p-8 text-white shadow-xl relative overflow-hidden group">
+            <!-- Subtle Abstract Pattern -->
+            <div class="absolute -right-10 -bottom-10 w-40 h-40 border border-white/10 rounded-full pointer-events-none group-hover:scale-110 transition-transform duration-700"></div>
+            <div class="absolute -right-4 -bottom-4 w-20 h-20 border border-white/10 rounded-full pointer-events-none group-hover:scale-110 transition-transform duration-700 delay-75"></div>
+
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-cyan-300 mb-6 backdrop-blur-sm border border-white/10">
+                <i class="ph-bold ph-handshake text-2xl"></i>
+              </div>
+              <h4 class="text-xl font-bold mb-3 text-cyan-300">Initiate a Consultation</h4>
+              <p class="text-slate-300 text-sm leading-relaxed mb-8">
+                Engage our specialists to structure a tailored pathway for your personal mobility or corporate expansion objectives.
+              </p>
+              <a href="/contact" class="inline-flex items-center justify-center w-full py-3 bg-white text-slate-900 text-sm font-bold rounded-lg hover:bg-slate-100 transition-colors group/btn">
+                Contact Us <i class="ph-bold ph-arrow-right ml-2 group-hover/btn:translate-x-1 transition-transform"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values Section -->
+  <section class="py-24 bg-slate-900 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900 via-slate-900 to-slate-900 opacity-60"></div>
+    <div class="absolute -left-40 top-40 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px]"></div>
+    <div class="absolute right-0 bottom-0 w-96 h-96 bg-cyan-600/20 rounded-full blur-[120px]"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" data-aos="fade-up">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+        <div class="max-w-2xl">
+          <span class="inline-block px-4 py-1 rounded-full bg-white/5 text-white/80 font-semibold text-xs tracking-widest uppercase mb-4 border border-white/10 backdrop-blur-md">Our Core Values</span>
+          <h2 class="text-4xl md:text-5xl font-heading font-bold text-white tracking-tight leading-tight">The Principles That Guide Us</h2>
+        </div>
+        <p class="text-slate-300 max-w-md md:text-right leading-relaxed text-lg font-light">
+          These foundational beliefs ensure every interaction and decision we make serves your best interests.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
+        
+        <!-- Integrity (Large) -->
+        <div class="md:col-span-2 md:row-span-2 rounded-3xl bg-white/[0.02] backdrop-blur-xl border border-white/5 p-10 flex flex-col justify-end relative overflow-hidden group hover:border-teal-500/50 hover:-translate-y-2 hover:bg-white/[0.05] transition-all duration-500 shadow-2xl">
+          <div class="absolute -right-20 -top-20 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl group-hover:bg-teal-500/20 transition-colors duration-700"></div>
+          <i class="ph-duotone ph-shield-check text-8xl text-teal-500/20 absolute top-10 right-10"></i>
+          <div class="relative z-10">
+            <div class="w-14 h-14 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-6 shadow-inner group-hover:bg-teal-500 group-hover:text-white transition-colors duration-500">
+              <i class="ph-bold ph-shield-check text-2xl"></i>
+            </div>
+            <h4 class="text-3xl font-bold text-white mb-3">Integrity</h4>
+            <p class="text-slate-400 text-lg leading-relaxed max-w-md font-light group-hover:text-teal-50 transition-colors duration-500">We operate with complete transparency and honesty, ensuring a trusting partnership from day one. No hidden fees, no false promises.</p>
+          </div>
+        </div>
+
+        <!-- Excellence -->
+        <div class="rounded-3xl bg-white/[0.02] backdrop-blur-xl border border-white/5 p-8 flex flex-col justify-end relative overflow-hidden group hover:border-purple-500/50 hover:-translate-y-2 hover:bg-white/[0.05] transition-all duration-500 shadow-2xl">
+          <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent"></div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-4 shadow-inner group-hover:bg-purple-500 group-hover:text-white transition-colors duration-500">
+              <i class="ph-bold ph-diamond text-xl"></i>
+            </div>
+            <h4 class="text-2xl font-bold text-white mb-2">Excellence</h4>
+            <p class="text-slate-400 text-sm font-light group-hover:text-purple-50 transition-colors duration-500">We are committed to the highest standards, paying meticulous attention to every detail.</p>
+          </div>
+        </div>
+
+        <!-- Innovation -->
+        <div class="rounded-3xl bg-white/[0.02] backdrop-blur-xl border border-white/5 p-8 flex flex-col justify-end relative overflow-hidden group hover:border-blue-500/50 hover:-translate-y-2 hover:bg-white/[0.05] transition-all duration-500 shadow-2xl">
+          <div class="absolute inset-0 bg-gradient-to-bl from-blue-500/5 to-transparent"></div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-4 shadow-inner group-hover:bg-blue-500 group-hover:text-white transition-colors duration-500">
+              <i class="ph-bold ph-lightbulb text-xl"></i>
+            </div>
+            <h4 class="text-2xl font-bold text-white mb-2">Innovation</h4>
+            <p class="text-slate-400 text-sm font-light group-hover:text-blue-50 transition-colors duration-500">We continuously seek new ways to simplify your experience using modern tools.</p>
+          </div>
+        </div>
+
+        <!-- Client-Centric (Wide) -->
+        <div class="md:col-span-3 rounded-3xl bg-white/[0.02] backdrop-blur-xl border border-white/5 p-10 flex flex-col sm:flex-row items-center gap-8 relative overflow-hidden group hover:border-amber-500/50 hover:-translate-y-2 hover:bg-white/[0.05] transition-all duration-500 shadow-2xl">
+          <div class="absolute left-0 bottom-0 w-full h-full bg-gradient-to-t from-amber-500/5 to-transparent"></div>
+          <div class="w-20 h-20 rounded-2xl bg-amber-500/10 flex items-center justify-center text-amber-400 shrink-0 relative z-10 shadow-inner group-hover:bg-amber-500 group-hover:text-white transition-colors duration-500">
+            <i class="ph-bold ph-heart text-4xl"></i>
+          </div>
+          <div class="relative z-10">
+            <h4 class="text-3xl font-bold text-white mb-3">Client-Centric</h4>
+            <p class="text-slate-400 text-lg max-w-3xl font-light group-hover:text-amber-50 transition-colors duration-500">Your journey is our priority. We listen carefully and deliver solutions that exceed expectations, tailoring our strategies to fit your specific ambitions.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="py-24 bg-slate-50 border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-1 rounded-full bg-purple-100 text-purple-600 font-semibold text-xs tracking-widest uppercase mb-4 border border-purple-200">Leadership</span>
+        <h2 class="text-3xl md:text-5xl font-heading font-bold text-slate-900 mb-4">Executive Team</h2>
+        <p class="text-slate-500 text-lg max-w-2xl mx-auto">The strategic minds orchestrating our global operations.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Team Member 1 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group" data-aos="fade-up">
+          <div class="p-6">
+            <div class="aspect-[4/5] rounded-xl overflow-hidden mb-6 relative bg-slate-100">
+              <img src="/images/founder.jpg" alt="Apostle Emmanuel Siayor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            </div>
+            <h4 class="text-xl font-bold text-slate-900 mb-1">Apostle Emmanuel Siayor</h4>
+            <p class="text-purple-600 font-bold text-xs uppercase tracking-widest mb-3">Founder & CEO</p>
+          </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group" data-aos="fade-up" data-aos-delay="100">
+          <div class="p-6">
+            <div class="aspect-[4/5] rounded-xl overflow-hidden mb-6 relative bg-slate-100">
+              <img src="/images/general-mgr.jpg" alt="Otchere Andrew" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            </div>
+            <h4 class="text-xl font-bold text-slate-900 mb-1">Otchere Andrew</h4>
+            <p class="text-purple-600 font-bold text-xs uppercase tracking-widest mb-3">General Manager</p>
+          </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group" data-aos="fade-up" data-aos-delay="200">
+          <div class="p-6">
+            <div class="aspect-[4/5] rounded-xl overflow-hidden mb-6 relative bg-slate-100">
+              <img src="/images/team1.jpeg" alt="Ruth Asare" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            </div>
+            <h4 class="text-xl font-bold text-slate-900 mb-1">Ruth Asare</h4>
+            <p class="text-purple-600 font-bold text-xs uppercase tracking-widest mb-3">Secretary</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

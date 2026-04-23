@@ -1,0 +1,31 @@
+---
+interface Props {
+  quote: string;
+  name: string;
+  role: string;
+  avatar: string;
+  rating?: number;
+}
+
+const { quote, name, role, avatar, rating = 5 } = Astro.props;
+---
+
+<div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 h-full flex flex-col transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+  <div class="flex text-amber-400 text-lg mb-4">
+    {Array.from({ length: rating }).map(() => (
+      <i class="ph-fill ph-star"></i>
+    ))}
+  </div>
+  
+  <p class="text-slate-600 text-base leading-relaxed mb-8 flex-1 relative z-10 before:content-['\201C'] before:absolute before:-top-4 before:-left-2 before:text-5xl before:text-purple-100 before:-z-10 before:font-serif">
+    {quote}
+  </p>
+  
+  <div class="flex items-center gap-4 mt-auto">
+    <img src={avatar} alt={name} class="w-12 h-12 rounded-full object-cover border-2 border-purple-50" loading="lazy">
+    <div>
+      <h4 class="font-bold text-slate-900 text-base mb-0">{name}</h4>
+      <span class="text-sm text-slate-500">{role}</span>
+    </div>
+  </div>
+</div>

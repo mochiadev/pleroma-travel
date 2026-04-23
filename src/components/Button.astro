@@ -1,0 +1,39 @@
+---
+interface Props {
+  variant?: 'glow' | 'glass' | 'ghost' | 'outline';
+  href?: string;
+  class?: string;
+}
+
+const { variant = 'glow', href, class: className = '' } = Astro.props;
+
+const baseClasses = "btn-base";
+let variantClasses = "";
+
+switch (variant) {
+  case 'glow':
+    variantClasses = "btn-glow";
+    break;
+  case 'glass':
+    variantClasses = "btn-glass";
+    break;
+  case 'ghost':
+    variantClasses = "btn-ghost";
+    break;
+  case 'outline':
+    variantClasses = "border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white";
+    break;
+}
+
+const finalClass = `${baseClasses} ${variantClasses} ${className}`;
+---
+
+{href ? (
+  <a href={href} class={finalClass}>
+    <slot />
+  </a>
+) : (
+  <button class={finalClass}>
+    <slot />
+  </button>
+)}
