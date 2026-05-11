@@ -24,7 +24,7 @@ import Button from '../components/Button.astro';
     <!-- Background Slides -->
     <div class="absolute inset-0">
       {[
-        { src: '/images/index-hero.webp',  alt: 'Travel abroad' },
+        { src: '/images/index-hero.avif',  alt: 'Travel abroad' },
         { src: '/images/index-hero1.jpg',  alt: 'Business setup' },
         { src: '/images/index-hero2.jpeg', alt: 'New journey' },
         { src: '/images/index-hero3.webp', alt: 'Global reach' },
@@ -108,7 +108,7 @@ import Button from '../components/Button.astro';
               Tailored company registration, compliance consulting, and corporate structuring across borders.
             </p>
             <div class="flex flex-wrap gap-3 sm:gap-4">
-              <Button href="/business-support" variant="glow" class="from-cyan-600 to-blue-600 px-5 sm:px-8 py-2.5 sm:py-3.5 text-xs sm:text-sm uppercase tracking-widest">Learn More</Button>
+              <Button href="/services/business-support" variant="glow" class="from-cyan-600 to-blue-600 px-5 sm:px-8 py-2.5 sm:py-3.5 text-xs sm:text-sm uppercase tracking-widest">Learn More</Button>
             </div>
           </div>
 
@@ -196,7 +196,7 @@ import Button from '../components/Button.astro';
             title="Passport Services"
             description="Fast-track passport processing, renewals, and document assistance."
             image="/images/passport.jpg"
-            href="/legal-documents#passport"
+            href="/services/legal-documents#passport"
             icon="ph-bold ph-identification-card"
             iconColor="indigo"
           />
@@ -206,7 +206,7 @@ import Button from '../components/Button.astro';
             title="Business Setup"
             description="Complete international business registration and compliance services."
             image="/images/bizreg.jpg"
-            href="/business-support#registration"
+            href="/services/business-support#registration"
             icon="ph-bold ph-buildings"
             iconColor="amber"
           />
@@ -216,7 +216,7 @@ import Button from '../components/Button.astro';
             title="Birth Certificate"
             description="Application, replacement & legalization services for official documents."
             image="/images/birth.jpg"
-            href="/legal-documents#birth-certificate"
+            href="/services/legal-documents#birth-certificate"
             icon="ph-bold ph-file-text"
             iconColor="rose"
           />
@@ -556,9 +556,9 @@ import Button from '../components/Button.astro';
                 <span class="relative z-10">PTC made my dream of working in Canada a reality. The entire process was smooth and transparent, with constant updates at every stage.</span>
               </p>
               <div class="flex items-center gap-4 mt-auto pt-6 border-t border-slate-200">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="John D." class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" loading="lazy">
+                <img src="/images/clients/male0.jpg" alt="James Agyemang" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" loading="lazy">
                 <div>
-                  <h4 class="font-bold text-slate-900 text-sm">John D.</h4>
+                  <h4 class="font-bold text-slate-900 text-sm">James Agyemang</h4>
                   <span class="text-slate-500 text-xs">Construction Supervisor, Canada</span>
                 </div>
               </div>
@@ -576,9 +576,9 @@ import Button from '../components/Button.astro';
                 <span class="relative z-10">From application to arrival in Germany took just 8 weeks! The team handled everything from visa processing to finding me accommodation.</span>
               </p>
               <div class="flex items-center gap-4 mt-auto pt-6 border-t border-slate-200">
-                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Sarah M." class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" loading="lazy">
+                <img src="/images/clients/female0.jpg" alt="Sarah Mensah" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" loading="lazy">
                 <div>
-                  <h4 class="font-bold text-slate-900 text-sm">Sarah M.</h4>
+                  <h4 class="font-bold text-slate-900 text-sm">Sarah Mensah</h4>
                   <span class="text-slate-500 text-xs">Senior Caregiver, Germany</span>
                 </div>
               </div>
@@ -596,9 +596,9 @@ import Button from '../components/Button.astro';
                 <span class="relative z-10">The hospitality job in Australia was exactly as described. PTC's verification process gave me confidence in the opportunity.</span>
               </p>
               <div class="flex items-center gap-4 mt-auto pt-6 border-t border-slate-200">
-                <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Michael T." class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" loading="lazy">
+                <img src="/images/clients/male1.jpg" alt="Festus Appiah" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" loading="lazy">
                 <div>
-                  <h4 class="font-bold text-slate-900 text-sm">Michael T.</h4>
+                  <h4 class="font-bold text-slate-900 text-sm">Festus Appiah</h4>
                   <span class="text-slate-500 text-xs">Hotel Manager, Australia</span>
                 </div>
               </div>
@@ -616,9 +616,9 @@ import Button from '../components/Button.astro';
                 <span class="relative z-10">PTC helped me register my export business in record time. Their knowledge of international requirements saved me months of work.</span>
               </p>
               <div class="flex items-center gap-4 mt-auto pt-6 border-t border-slate-200">
-                <img src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Ama K." class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" loading="lazy">
+                <img src="/images/clients/female1.jpg" alt="Judith Darko" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" loading="lazy">
                 <div>
-                  <h4 class="font-bold text-slate-900 text-sm">Ama K.</h4>
+                  <h4 class="font-bold text-slate-900 text-sm">Judith Darko</h4>
                   <span class="text-slate-500 text-xs">Business Owner, UK</span>
                 </div>
               </div>
@@ -636,9 +636,9 @@ import Button from '../components/Button.astro';
                 <span class="relative z-10">My student visa was approved in just 3 weeks thanks to PTC's meticulous document preparation and interview coaching.</span>
               </p>
               <div class="flex items-center gap-4 mt-auto pt-6 border-t border-slate-200">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Kwame B." class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" loading="lazy">
+                <img src="/images/clients/male2.jpg" alt="Yeboah Eric" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" loading="lazy">
                 <div>
-                  <h4 class="font-bold text-slate-900 text-sm">Kwame B.</h4>
+                  <h4 class="font-bold text-slate-900 text-sm">Yeboah Eric</h4>
                   <span class="text-slate-500 text-xs">Student, USA</span>
                 </div>
               </div>

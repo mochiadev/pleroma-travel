@@ -7,8 +7,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <header class="relative pt-32 pb-24 lg:pt-40 lg:pb-32 bg-slate-900 overflow-hidden">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
-      <img src="/images/bconsult.jpg" alt="About Us" class="w-full h-full object-cover opacity-30 object-center">
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900/40"></div>
+      <img src="/images/bconsult.jpg" alt="About Us" class="w-full h-full object-cover opacity-60 object-center">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-slate-900/20"></div>
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-right">
@@ -51,7 +51,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               </blockquote>
               <div class="mt-4 ml-8 flex items-center gap-3">
                 <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-purple-100">
-                  <img src="/images/author0.jpg" alt="Apostle Emmanuel Siayor" class="w-full h-full object-cover">
+                  <img src="/images/author0.avif" alt="Apostle Emmanuel Siayor" class="w-full h-full object-cover">
                 </div>
                 <div>
                   <span class="block text-sm font-bold text-slate-900">Apostle Emmanuel Siayor</span>
@@ -227,21 +227,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group" data-aos="fade-up" data-aos-delay="100">
           <div class="p-6">
             <div class="aspect-[4/5] rounded-xl overflow-hidden mb-6 relative bg-slate-100">
-              <img src="/images/general-mgr.jpg" alt="Otchere Andrew" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            </div>
-            <h4 class="text-xl font-bold text-slate-900 mb-1">Otchere Andrew</h4>
-            <p class="text-purple-600 font-bold text-xs uppercase tracking-widest mb-3">General Manager</p>
-          </div>
-        </div>
-
-        <!-- Team Member 3 -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group" data-aos="fade-up" data-aos-delay="200">
-          <div class="p-6">
-            <div class="aspect-[4/5] rounded-xl overflow-hidden mb-6 relative bg-slate-100">
               <img src="/images/team1.jpeg" alt="Ruth Asare" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
             </div>
             <h4 class="text-xl font-bold text-slate-900 mb-1">Ruth Asare</h4>
             <p class="text-purple-600 font-bold text-xs uppercase tracking-widest mb-3">Secretary</p>
+          </div>
+        </div>
+
+        <!-- Team Member 3: Other Staff -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group" data-aos="fade-up" data-aos-delay="200">
+          <div class="p-6 flex flex-col h-full">
+            <div class="aspect-[4/5] rounded-xl overflow-hidden mb-6 relative bg-slate-50 flex items-center justify-center border border-slate-200">
+              <div class="text-center px-4">
+                <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="ph-bold ph-users-three text-3xl"></i>
+                </div>
+                <h5 class="text-sm font-bold text-slate-800 mb-3">Our Support Team</h5>
+                <ul class="text-sm text-slate-500 leading-relaxed space-y-2 text-left inline-block">
+                  <li class="flex items-center gap-2"><i class="ph-bold ph-check text-purple-500"></i> Marketing Manager</li>
+                  <li class="flex items-center gap-2"><i class="ph-bold ph-check text-purple-500"></i> Travel Consultants</li>
+                  <li class="flex items-center gap-2"><i class="ph-bold ph-check text-purple-500"></i> Customer Support</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-auto">
+              <h4 class="text-xl font-bold text-slate-900 mb-1">Other Staff</h4>
+              <p class="text-purple-600 font-bold text-xs uppercase tracking-widest mb-3">Dedicated Professionals</p>
+            </div>
           </div>
         </div>
       </div>
